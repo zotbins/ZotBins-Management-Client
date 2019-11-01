@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes';
 import { Menu, Icon, Switch } from 'antd';
-
-const { SubMenu } = Menu;
+  
 
 
 class Navigation extends React.Component {
@@ -12,7 +11,7 @@ class Navigation extends React.Component {
         super(props);
 
         this.state = {
-            current: 1
+            current: 1,
         }
     }
 
@@ -25,29 +24,28 @@ class Navigation extends React.Component {
     
       render() {
         return (
-          <div>
+          <div style={{ height: "100%"}}>
 
-            <h1>ZotBins</h1>
+  
                 
             
             <Menu
               theme={"dark"}
               onClick={this.handleClick}
-              style={{ width: 256, height: 600 }}
-              defaultOpenKeys={['sub1']}
+              style={{ width: 256, height: "100%", backgroundColor: "#4E4E4E" }}
               selectedKeys={[this.state.current]}
               mode="inline"
             >
 
               <Menu.Item key="1">
-            <Icon type="pie-chart" /><span>Dashboard</span>
+            <Icon type="bar-chart" /><span>Dashboard</span>
             <Link to={ROUTES.DASHBOARD}></Link>
           </Menu.Item>
           
 
           
           <Menu.Item key="2">
-            <Icon type="pie-chart" /><span>Bin Status</span>
+            <Icon type="api" /><span>Bin Status</span>
             <Link to={ROUTES.BIN_STATUS}></Link>
           </Menu.Item>
 
