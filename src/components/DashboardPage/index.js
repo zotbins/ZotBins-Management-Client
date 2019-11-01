@@ -1,9 +1,20 @@
 import React from 'react';
 
-class BinStatusPage extends React.Component {
+import { Row, Col } from 'antd';
+
+
+
+class DashboardPage extends React.Component {
     render() {
-        return (<h1>Dashboard</h1>)
+        return (
+        <div>
+            <Row>
+                <Col span={18}>col-12</Col>
+                <Col span={6}>col-12</Col>
+            </Row>
+        </div>
+        )
     }
 }
 
-export default BinStatusPage;
+export default DashboardPage;
