@@ -13,13 +13,13 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <TopBar />
-                <div style={{display: 'flex', flexDirection: 'row'}}>
-                    <div style={{height: '100vh'}}>
-                        
-                        <Navigation />
-                        
-                    </div>
+                <div style={{width: "100vw", zIndex: 2, display: "flex", flexDirection: "column", height: 60, position: "fixed"}}>
+                    <TopBar />
+                    <div style={{width: "18%"}}>
+                    <Navigation />
+                    </div>  
+                </div>
+                <div style={{float: "right", position: "relative", width: "82%", top: 60}}>
                         <Route exact path={ROUTES.DASHBOARD} component={DashboardPage} />
                         <Route path={ROUTES.BIN_STATUS} component={BinStatusPage} />
                         <Route path={ROUTES.BIN_REGISTRATION} component={DeviceRegistrationPage} />
@@ -27,6 +27,7 @@ class App extends Component {
 
                   
                 </div>
+                
             </Router>
         );
     }

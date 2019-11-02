@@ -32,7 +32,7 @@ class Navigation extends React.Component {
             <Menu
               theme={"dark"}
               onClick={this.handleClick}
-              style={{ width: 256, height: "100%", backgroundColor: "#4E4E4E" }}
+              style={{ height: "100vh", backgroundColor: "#4E4E4E" }}
               selectedKeys={[this.state.current]}
               mode="inline"
             >

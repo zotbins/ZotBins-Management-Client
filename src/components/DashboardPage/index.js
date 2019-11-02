@@ -4,21 +4,33 @@ import { Row, Col } from 'antd';
 import LineChart from "../LineChart";
 import Doughnut from "../Doughnut";
 import BinMap from "../BinMap";
+import Table from "../BinTable";
 
 
 class DashboardPage extends React.Component {
-    render() {
+    render() { 
         return (
-        <div style={{display: "flex", flexDirection: "row", width: "100%"}}>
-            <div style={{width: "65%"}}>
-            <h1 style={{margin: "1rem", fontWeight: "400"}}>Overall Data</h1>
-                <LineChart />
+        <div style={{ display: "flex", flexDirection: "column", margin: "0 3rem"}}>
+            <Row>
+                <Col>
+                    <h1 style={{margin: "2rem 2rem 0 2rem", fontSize: "40px", fontWeight: "300", color: "#43425D"}}>Overall Data</h1>
+                </Col>
+            </Row>
 
-            </div>
-            <div style={{width: "35%"}}>
+            <Row>
+
+            <Col span={16}>
+                <LineChart />
+                <Table />
+
+            </Col>
+
+            <Col span={8}>
                 <Doughnut />
-                {/* <BinMap /> // Work in progress */}
-            </div>
+                <BinMap />
+            </Col>
+
+            </Row>
         </div>
         )
     }

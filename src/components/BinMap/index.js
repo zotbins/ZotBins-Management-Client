@@ -1,31 +1,18 @@
 import React from 'react';
 import Chart from "chart.js";
 import { Card } from 'antd';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import Map from 'pigeon-maps';
 
-const mapStyles = {
-  width: "88%",
-  height: "250px"
-};
 
 class BinMap extends React.Component {
 
     render() {
         return (
-          <Card style={{margin: "1rem"}}>
-            <div>
-            <Map
-              google={this.props.google}
-              zoom={8}
-              style={mapStyles}
-              initialCenter={{ lat: 47.444, lng: -122.176}}
-            />
-            </div>
+          <Card style={{margin: "1rem", filter: "grayscale(1)"}}>
+             <Map center={[33.6404952, -117.8442962]} zoom={14} height={250} style={{width: "100%"}}></Map>
           </Card>
         );
       }
 }
 
-export default GoogleApiWrapper({
-    apiKey: process.env.GOOGLE_MAPS_API
-  })(BinMap);
+export default BinMap;
