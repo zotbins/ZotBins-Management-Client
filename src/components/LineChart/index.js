@@ -31,6 +31,7 @@ class LineChart extends React.Component {
             <div>
                 <Card style={{margin: "1rem"}}>
                 <canvas
+                    height="100px"
                     id="myChart"
                     ref={this.chartRef}
                 />

@@ -19,13 +19,13 @@ class DashboardPage extends React.Component {
 
             <Row>
 
-            <Col span={16}>
+            <Col span={17}>
                 <LineChart />
                 <Table />
 
             </Col>
 
-            <Col span={8}>
+            <Col span={7}>
                 <Doughnut />
                 <BinMap />
             </Col>

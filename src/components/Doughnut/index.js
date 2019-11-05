@@ -13,16 +13,26 @@ class Doughnut extends React.Component {
             type: "doughnut",
             data: {
                 //Bring in data
-                labels: ["Jan", "Feb", "March"],
-                datasets: [
-                    {
-                        label: "Sales",
-                        data: [86, 67, 91],
-                    }
+
+                datasets: [{
+                    data: [15, 20, 30],
+                    backgroundColor: ["#357B23","#3876AC","#616161"],
+                }],
+            
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: [
+                    'Compost',
+                    'Recycle',
+                    'Waste'
                 ]
             },
             options: {
-                //Customize chart options
+                legend: {
+                    labels: {boxWidth: 25},
+                    reverse: true,
+                    display: true,
+                    position: "bottom",
+                }  //Customize chart options
             }
         });
     }
@@ -30,9 +40,11 @@ class Doughnut extends React.Component {
         return (
             <div>
                 <Card style={{margin: "1rem"}}>
+                    <h3 style={{fontWeight: 300, color: "#43425D", marginBottom: "1.5rem"}}>Disposable Percentage</h3>
                 <canvas
                     id="myChart"
                     ref={this.chartRef}
+                    height={250}
                 />
                 </Card>
             </div>
