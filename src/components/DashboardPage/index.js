@@ -5,7 +5,7 @@ import LineChart from "../LineChart";
 import Doughnut from "../Doughnut";
 import BinMap from "../BinMap";
 import Table from "../BinTable";
-
+// TODO: import tippersRequest.js functions here, to pass to components
 
 class DashboardPage extends React.Component {
     render() { 
