@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'antd/dist/antd.css'; 
 import Navigation from '../Navigation';
 import TopBar from '../TopBar';
-import DashboardPage from '../DashboardPage';
-import BinStatusPage from '../BinStatusPage';
-import DeviceRegistrationPage from '../DeviceRegistrationPage';
+import DashboardPage from '../Pages/DashboardPage';
+import BinStatusPage from '../Pages/BinStatusPage';
+import DeviceRegistrationPage from '../Pages/DeviceRegistrationPage';
 
 import * as ROUTES from '../../constants/routes';
 

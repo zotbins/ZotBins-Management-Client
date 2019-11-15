@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Row, Col } from 'antd';
-import LineChart from "../LineChart";
-import Doughnut from "../Doughnut";
-import BinMap from "../BinMap";
-import Table from "../BinTable";
+import LineChart from "../../DataVisualization/LineChart";
+import Doughnut from "../../DataVisualization/Doughnut";
+import BinMap from "../../DataVisualization/BinMap";
+import Table from "../../DataVisualization/BinTable";
 // TODO: import tippersRequest.js functions here, to pass to components
 
 class DashboardPage extends React.Component {
