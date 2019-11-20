@@ -16,9 +16,21 @@ class LineChart extends React.Component {
                 labels: ["Jan", "Feb", "March"],
                 datasets: [
                     {
-                        label: "Sales",
-                        data: [86, 67, 91],
-                    }
+                        label: "Waste",
+                        data: [86, 27, 91],
+                        backgroundColor: "#61616188",
+                    },
+                    {
+                        label: "Recycle",
+                        data: [30, 77, 51],
+                        backgroundColor: "#3876AC88",
+                    },
+                    {
+                        label: "Compost",
+                        data: [60, 57, 25],
+                        backgroundColor: "#357B2388",
+                    },
+
                 ]
             },
             options: {
@@ -31,7 +43,7 @@ class LineChart extends React.Component {
             <div>
                 <Card style={{margin: "1rem"}}>
                 <canvas
-                    height="100px"
+                    height="110px"
                     id="myChart"
                     ref={this.chartRef}
                 />
