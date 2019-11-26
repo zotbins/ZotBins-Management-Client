@@ -10,26 +10,22 @@ import Table from "../BinTable";
 class DashboardPage extends React.Component {
     render() { 
         return (
-        <div style={{ display: "flex", flexDirection: "column", margin: "0 3rem"}}>
+        <div id="dashboard-page">
             <Row>
                 <Col>
-                    <h1 style={{margin: "2rem 2rem 0 2rem", fontSize: "40px", fontWeight: "300", color: "#43425D"}}>Overall Data</h1>
+                    <h1>Overall Data</h1>
                 </Col>
             </Row>
-
             <Row>
+                <Col span={17}>
+                    <LineChart />
+                    <Table />
 
-            <Col span={17}>
-                <LineChart />
-                <Table />
-
-            </Col>
-
-            <Col span={7}>
-                <Doughnut />
-                <BinMap />
-            </Col>
-
+                </Col>
+                <Col span={7}>
+                    <Doughnut />
+                    <BinMap />
+                </Col>
             </Row>
         </div>
         )

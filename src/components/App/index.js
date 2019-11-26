@@ -13,21 +13,17 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <div style={{width: "100vw", zIndex: 2, display: "flex", flexDirection: "column", height: 60, position: "fixed"}}>
+                <div id="app-router__topbar-and-nav">
                     <TopBar />
-                    <div style={{width: "18%"}}>
+                    <div id="app-router__nav-column">
                     <Navigation />
                     </div>  
                 </div>
-                <div style={{float: "right", position: "relative", width: "82%", top: 60}}>
+                <div id="app-router__dashboard-column">
                         <Route exact path={ROUTES.DASHBOARD} component={DashboardPage} />
                         <Route path={ROUTES.BIN_STATUS} component={BinStatusPage} />
                         <Route path={ROUTES.BIN_REGISTRATION} component={DeviceRegistrationPage} />
-                    
-
-                  
                 </div>
-                
             </Router>
         );
     }
