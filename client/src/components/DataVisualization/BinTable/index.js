@@ -98,8 +98,8 @@ class BinTable extends React.Component {
     render() {
         return (
             <div>
-                <Card style={{margin: "1rem"}}>
-                <Table columns={columns} dataSource={data} onChange={onChange} />
+                <Card id="bin-table-card">
+                    <Table columns={columns} dataSource={data} onChange={onChange} />
                 </Card>
             </div>
         )

@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to compile SASS?
+Write styles in files ending with ".sass" and leave it in the
+"client/src/sass" folder.
+Run "yarn sass" to watch and compile files in the sass folder
+into the "client/src/css" folder.
+
 ## Available Scripts
 
 In the project directory, you can run:
