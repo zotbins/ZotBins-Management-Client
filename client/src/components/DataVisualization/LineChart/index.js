@@ -29,7 +29,7 @@ class LineChart extends React.Component {
     render() {
         return (
             <div>
-                <Card style={{margin: "1rem"}}>
+                <Card id="line-chart-card">
                 <canvas
                     height="100px"
                     id="myChart"
