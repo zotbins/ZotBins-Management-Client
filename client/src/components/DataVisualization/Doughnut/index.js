@@ -3,52 +3,44 @@ import Chart from "chart.js";
 import { Card } from 'antd';
 
 class Doughnut extends React.Component {
-    chartRef = React.createRef();
     
-    // TODO: Implement ZotBins Line Chart, edit code below - These are example data
-    componentDidMount() {
-        const myChartRef = this.chartRef.current.getContext("2d");
-        
-        new Chart(myChartRef, {
-            type: "doughnut",
-            data: {
-                //Bring in data
+    
+    constructor(props){
+        super(props);
 
-                datasets: [{
-                    data: [15, 20, 30],
-                    backgroundColor: ["#357B23","#3876AC","#616161"],
-                }],
-            
-                // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    'Compost',
-                    'Recycle',
-                    'Waste'
-                ]
-            },
-            options: {
-                legend: {
-                    labels: {boxWidth: 25},
-                    reverse: true,
-                    display: true,
-                    position: "bottom",
-                }  //Customize chart options
-            }
-        });
+        this.state = {
+            usageCount: null
+        }
+        this.chartRef = React.createRef();
+    }
+
+    
+    
+    getData() {
+        fetch("http://localhost:9000/bin_breakbeam_count/2020-02-01+00%3A00%3A00/2020-02-03+23%3A59%3A59", 
+        {method: 'GET'}).then(res => res.json()).then(data => this.setState({usageCount: [data.recycle, data.landfill, data.compost]}))
+    }
+
+    componentDidMount() {
+        this.getData()
+    
+
     }
     render() {
-        return (
-            <div>
-                <Card style={{margin: "1rem"}}>
-                    <h3 style={{fontWeight: 300, color: "#43425D", marginBottom: "1.5rem"}}>Disposable Percentage</h3>
-                <canvas
-                    id="myChart"
-                    ref={this.chartRef}
-                    height={250}
-                />
-                </Card>
-            </div>
-        )
+        // if (this.state.usageCount != null) {
+            return (
+                <div>
+                    <Card style={{margin: "1rem"}}>
+                        <h3 style={{fontWeight: 300, color: "#43425D", marginBottom: "1.5rem"}}>Disposable Percentage</h3>
+                        <Doughnut ref={this.chartReference} data={[10,10,10]}    />
+                    </Card>
+                </div>
+            )      
+        // }
+        // else {
+        //     return (<div><h2>Loading...</h2></div>)
+        // }
+        
     }
 }
 
