@@ -2,7 +2,7 @@
 
     import { Row, Col, Menu, Icon, Dropdown, Button } from 'antd';
     import LineChart from "../../DataVisualization/LineChart";
-    import Doughnut from "../../DataVisualization/Doughnut";
+    import DoughnutGraph from "../../DataVisualization/DoughnutGraph";
     import BinMap from "../../DataVisualization/BinMap";
     import Table from "../../DataVisualization/BinTable";
     import IntervalOption from "../../IntervalOption";
@@ -11,7 +11,6 @@
     class DashboardPage extends React.Component {
         constructor(props) {
             super(props);
-
 
         }
 
@@ -42,7 +41,7 @@
                 </Col>
 
                 <Col l={10} xl={8}>
-                    <Doughnut />
+                    <DoughnutGraph />
                     <BinMap />
                 </Col>
 

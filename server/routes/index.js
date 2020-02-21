@@ -38,7 +38,7 @@ async function getBinBreakbeamCount(Lbins, Rbins, Cbins, startTimestamp, endTime
 }
 
 router.get('/bin_breakbeam_count/:startTimestamp/:endTimestamp', async function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3002");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   var LandfillBins = ['ZBin2B'];
   var RecycleBins = ['ZBin4B'];
   var CompostBins = ['ZBin3B'];
