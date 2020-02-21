@@ -3,46 +3,15 @@ import { Card, Table } from 'antd';
 
 const columns = [
     {
-      title: 'Name',
+      title: 'Rank',
       dataIndex: 'name',
-      filters: [
-        {
-          text: 'Joe',
-          value: 'Joe',
-        },
-        {
-          text: 'Jim',
-          value: 'Jim',
-        },
-        {
-          text: 'Submenu',
-          value: 'Submenu',
-          children: [
-            {
-              text: 'Green',
-              value: 'Green',
-            },
-            {
-              text: 'Black',
-              value: 'Black',
-            },
-          ],
-        },
-      ],
-      // specify the condition of filtering result
-      // here is that finding the name started with `value`
-      onFilter: (value, record) => record.name.indexOf(value) === 0,
-      sorter: (a, b) => a.name.length - b.name.length,
-      sortDirections: ['descend'],
     },
     {
-      title: 'Age',
+      title: 'Building',
       dataIndex: 'age',
-      defaultSortOrder: 'descend',
-      sorter: (a, b) => a.age - b.age,
     },
     {
-      title: 'Address',
+      title: 'Waste',
       dataIndex: 'address',
       filters: [
         {
@@ -64,27 +33,27 @@ const columns = [
   const data = [
     {
       key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
+      name: '1',
+      age: "Donald Bren Hall",
+      address: '85',
     },
     {
       key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
+      name: '2',
+      age: 'Information and Computer Science 2',
+      address: '100',
     },
     {
       key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
+      name: '3',
+      age: 'Student Center Dining Hall 1',
+      address: '320',
     },
     {
       key: '4',
-      name: 'Jim Red',
-      age: 32,
-      address: 'London No. 2 Lake Park',
+      name: '4',
+      age: 'Mesa Tower',
+      address: '512',
     },
   ];
   
@@ -98,8 +67,9 @@ class BinTable extends React.Component {
     render() {
         return (
             <div>
-                <Card id="bin-table-card">
-                    <Table columns={columns} dataSource={data} onChange={onChange} />
+                <Card style={{margin: "1rem"}}>
+                <h3 style={{fontWeight: 300, color: "#43425D"}}>Leaderboard</h3>
+                <Table columns={columns} dataSource={data} onChange={onChange} size="small"/>
                 </Card>
             </div>
         )
