@@ -39,6 +39,18 @@ class IntervalOption extends React.Component {
 
     handleMenuClick(e) {
         this.setState({interval: e.key});
+        if (e.key == 1) {
+            this.props.updateDates([new Date(Date.now() - 15552000000 - 28800000).toISOString(), new Date().toISOString()])
+        }
+        if (e.key == 2) {
+            this.props.updateDates([new Date(Date.now() - 2592000000 - 28800000).toISOString(), new Date().toISOString()])
+        }
+        if (e.key == 3) {
+            this.props.updateDates([new Date(Date.now() - 604800000 - 28800000).toISOString(), new Date().toISOString()])
+        }
+        if (e.key == 4) {
+            this.props.updateDates([new Date(Date.now() - 3600000 - 28800000).toISOString(), new Date().toISOString()])
+        }
     }
 
     handleModeChange(e) {
@@ -61,18 +73,18 @@ class IntervalOption extends React.Component {
       }
 
     render() { 
-
+        var title = null;
         if (this.state.interval === "1") {
-            var title = "Last 6 Months"
+            title = "Last 6 Months"
         }
         else if (this.state.interval === "2") {
-            var title = "Last Month"
+            title = "Last Month"
         }
         else if (this.state.interval === "3") {
-            var title = "Last Week"
+            title = "Last Week"
         }
         else if (this.state.interval === "4") {
-            var title = "Last Hour"
+            title = "Last Hour"
         }
 
         if (this.state.mode === "period") {

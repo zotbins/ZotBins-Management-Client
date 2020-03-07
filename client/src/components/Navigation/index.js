@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes';
-import { Menu, Icon, Switch } from 'antd';
+import { Menu, Icon} from 'antd';
   
 
 

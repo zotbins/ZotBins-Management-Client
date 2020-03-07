@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@antv/g2plot": "^0.11.35",
     "antd": "^3.24.3",
     "chart.js": "^2.9.3",
     "moment": "^2.24.0",
