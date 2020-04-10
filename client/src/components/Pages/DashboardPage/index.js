@@ -5,6 +5,7 @@ import LineChart from "../../DataVisualization/LineChart";
 import Doughnut from "../../DataVisualization/Doughnut";
 import BinMap from "../../DataVisualization/BinMap";
 import Table from "../../DataVisualization/BinTable";
+import CardVisualFeature from "../../CardVisualFeature"
 // TODO: import tippersRequest.js functions here, to pass to components
 
 class DashboardPage extends React.Component {
@@ -17,10 +18,12 @@ class DashboardPage extends React.Component {
                 </Col>
             </Row>
             <Row>
+                <CardVisualFeature />
+            </Row>
+            <Row>
                 <Col span={17}>
                     <LineChart />
                     <Table />
-
                 </Col>
                 <Col span={7}>
                     <Doughnut />

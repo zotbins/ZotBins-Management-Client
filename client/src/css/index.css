@@ -60,6 +60,11 @@ h3 {
 #doughnut-card {
   margin: 1rem; }
 
+/*cardVisualFeature styling*/
+#cardVisualFeature {
+  width: 100%
+}
+
 /* LineChart styling */
 #line-chart-card {
   margin: 1rem; }
