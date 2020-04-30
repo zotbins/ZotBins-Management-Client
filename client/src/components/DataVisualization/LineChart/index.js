@@ -50,7 +50,7 @@ class LineChart extends React.Component {
                     <TabPane tab="Fullness" key="2">
 
                     </TabPane>
-                    <TabPane tab="Divergence" key="3">
+                    <TabPane tab="Diversion" key="3">
 
                     </TabPane>
                 </Tabs>
