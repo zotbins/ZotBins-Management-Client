@@ -58,7 +58,10 @@ class DoughnutGraph extends React.Component {
               ]
             }}
           />
-            
+                      <h4>Recycle: {this.state.data[0]}<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{parseInt((this.state.data[0]/(this.state.data[0] + this.state.data[1] + this.state.data[2]))*100)}%</span></h4>
+          <h4>Waste: {this.state.data[1]}<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{parseInt((this.state.data[1]/(this.state.data[0] + this.state.data[1] + this.state.data[2]))*100)}%</span></h4>
+          <h4>Compost: {this.state.data[2]}<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{parseInt((this.state.data[2]/(this.state.data[0] + this.state.data[1] + this.state.data[2]))*100)}%</span></h4>
+          <h4>Total: {this.state.data[0] + this.state.data[1] + this.state.data[2] }</h4>
           </Card>
         </div>
       );

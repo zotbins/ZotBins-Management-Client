@@ -70,6 +70,7 @@ class IntervalOption extends React.Component {
       
     onOk(value) {
         console.log('onOk: ', value);
+        this.props.updateDates([new Date(value[0]._d).toISOString(), new Date(value[1]._d).toISOString()])
       }
 
     render() { 
