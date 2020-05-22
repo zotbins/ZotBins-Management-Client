@@ -6,6 +6,7 @@ import TopBar from '../TopBar';
 import DashboardPage from '../Pages/DashboardPage';
 import BinStatusPage from '../Pages/BinStatusPage';
 import DeviceRegistrationPage from '../Pages/DeviceRegistrationPage';
+import GalleryPage from '../Pages/GalleryPage';
 
 import * as ROUTES from '../../constants/routes';
 
@@ -52,6 +53,7 @@ class App extends Component {
                         <Route exact path={ROUTES.DASHBOARD} component={DashboardPage} />
                         <Route path={ROUTES.BIN_STATUS} component={BinStatusPage} />
                         <Route path={ROUTES.BIN_REGISTRATION} component={DeviceRegistrationPage} />
+                        <Route path={ROUTES.GALLERY} component={GalleryPage} />
                 </div>
             </Router>
         );

@@ -71,6 +71,12 @@ h3 {
   flex-direction: row;
   margin: auto; }
 
+/* Gallery Page styling */
+#gallery-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 3rem; }
+
 /* Doughtnut styling */
 #doughnut-card {
   margin: 1rem; }

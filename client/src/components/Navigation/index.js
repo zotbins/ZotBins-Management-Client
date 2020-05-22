@@ -66,7 +66,11 @@ class Navigation extends React.Component {
               <Icon type="pie-chart" /><span>Bin Registration</span>
               <Link to={ROUTES.BIN_REGISTRATION}></Link>
             </Menu.Item>
-            
+            <Menu.Item key="4">
+              <Icon type="picture" /><span>Gallery</span>
+              <Link to={ROUTES.GALLERY}></Link>
+            </Menu.Item>
+
             </Menu>
           </div>
         );
