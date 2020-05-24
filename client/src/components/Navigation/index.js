@@ -56,6 +56,14 @@ class Navigation extends React.Component {
             
           </Menu.Item>
 
+
+          <Menu.Item key="4">
+            <Icon type="pie-chart" /><span>Image Gallery</span>
+            <Link to={ROUTES.IMAGE_GALLERY}></Link>
+            
+          </Menu.Item>
+
+
             </Menu>
           </div>
         );
