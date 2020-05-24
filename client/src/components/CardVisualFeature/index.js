@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Row } from 'antd';
+import Chart from "chart.js";
 
 var today = new Date();
 var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() + ((today.getHours() >= 12) ? " PM" : " AM");
@@ -61,7 +62,7 @@ class CardVisualFeature extends React.Component{
                                         </Row>
                                     </Col>
                                     <Col span={8} style={{float: 'right'}}>
-                                        <img src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
+                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
                                     </Col>
                                 </Row>
                             </Card>
@@ -82,7 +83,7 @@ class CardVisualFeature extends React.Component{
                                         </Row>
                                     </Col>
                                     <Col span={8} style={{float: 'right'}}>
-                                        <img src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
+                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70" ></img>
                                     </Col>
                                 </Row>                            
                             </Card>
@@ -103,7 +104,7 @@ class CardVisualFeature extends React.Component{
                                         </Row>
                                     </Col>
                                     <Col span={8} style={{float: 'right'}}>
-                                        <img src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
+                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
                                     </Col>
                                 </Row>                            
                             </Card>
@@ -126,7 +127,7 @@ class CardVisualFeature extends React.Component{
                                         </Row>
                                     </Col>
                                     <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
+                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
                                     </Col>
                                 </Row>
                             </Card>
@@ -147,7 +148,7 @@ class CardVisualFeature extends React.Component{
                                         </Row>
                                     </Col>
                                     <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
+                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
                                     </Col>
                                 </Row>                            
                             </Card>
@@ -168,7 +169,7 @@ class CardVisualFeature extends React.Component{
                                         </Row>
                                     </Col>
                                     <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
+                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
                                     </Col>
                                 </Row>                            
                             </Card>
