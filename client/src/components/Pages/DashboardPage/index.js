@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Row, Col} from "antd";
-import LineChart from "../../DataVisualization/LineChart";
-import DoughnutChart from "../../DataVisualization/DoughnutChart";
+import ChartTabs from "../../DataVisualization/ChartTabs";
+import Doughnut from "../../DataVisualization/Doughnut";
 import BinMap from "../../DataVisualization/BinMap";
 import Table from "../../DataVisualization/BinTable";
 import CardVisualFeature from "../../CardVisualFeature"
@@ -53,7 +53,7 @@ class DashboardPage extends React.Component {
                     </Row>
                     <Row>
                         <Col span={17}>
-                            <LineChart />
+                            <ChartTabs />
                             <Table />
                         </Col>
                         <Col span={7}>
@@ -69,7 +69,7 @@ class DashboardPage extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <LineChart />
+                        <ChartTabs />
                     </Row>
                     {middleVersion
                     ? <Row>
@@ -104,7 +104,7 @@ class DashboardPage extends React.Component {
   }
   
   export default DashboardPage;
-  
+
 /*import IntervalOption from "../../IntervalOption";
 // TODO: import tippersRequest.js functions here, to pass to components
 
@@ -170,7 +170,7 @@ class DashboardPage extends React.Component {
 
         <Row>
           <Col l={10} xl={16}>
-            <LineChart />
+            <ChartTabs />
             <Table />
           </Col>
 

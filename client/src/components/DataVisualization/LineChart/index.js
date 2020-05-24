@@ -1,10 +1,6 @@
 import React from 'react';
-import { Card } from 'antd';
 import { StackArea } from '@antv/g2plot';
-import { Tabs } from 'antd';
 import Chart from "chart.js";
-
-const { TabPane } = Tabs;
 
 class LineChart extends React.Component {
     chartRef = React.createRef();
@@ -42,26 +38,11 @@ class LineChart extends React.Component {
     render() {
         return (
             <div>
-                <Card style={{margin: "1rem"}}>
-                <Tabs defaultActiveKey="1">
-                    <TabPane tab="Weight" key="1">
-
-                    </TabPane>
-                    <TabPane tab="Fullness" key="2">
-
-                    </TabPane>
-                    <TabPane tab="Diversion" key="3">
-
-                    </TabPane>
-                </Tabs>
-
-                <canvas
-                    height="110px"
-                    id="myChart"
-                    ref={this.chartRef}
-                />
-
-                </Card>
+                    <canvas
+                        height="110px"
+                        id="myChart"
+                        ref={this.chartRef}
+                    />
             </div>
         )
     }
