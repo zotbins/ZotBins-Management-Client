@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Row, Col } from 'antd';
 import Gallery from "react-photo-gallery";
+// endpoint = https://zotbins.pythonanywhere.com/observation/get/image-list"
 
 
 const photos = [
@@ -52,22 +53,52 @@ const photos = [
     }
   ];
     
-  function columns(containerWidth) {
+function columns(containerWidth) {
     let columns = 1;
     if (containerWidth >= 500) columns = 2;
     if (containerWidth >= 900) columns = 3;
     if (containerWidth >= 1500) columns = 4;
     return columns;
-  }
+}
+
+var img; 
+
+function getImages(){
+    let request = new XMLHttpRequest();
+    request.open('GET', 'https://zotbins.pythonanywhere.com/observation/get/image-list');
+    request.send();
+    request.onload = () => {
+        if(request.states == 200){
+            img = JSON.parse(request.response);
+        }else{
+            console.log(`error ${request.status} ${request.statusText}`);
+        }
+    }
+}
+
+function setImages(){
+    let temp = img.imageNames;
+    var i;
+    for(i = 0; i < temp.length; i++){
+        var w = 1;
+        var h = 1;
+        if(i%3 == 0){
+            w = 3;
+            h = 4;
+        }
+        if(i%2 == 0){
+            w = 4;
+            h = 3;
+        }
+        photos.push(temp[i], w, h);
+    }
+}
 
 class GalleryPage extends React.Component {
     constructor(props){
         super(props);
-
-        this.state = {
-            windowWidth: 0,
-            windowHeight: 0
-        }
+        //getImages();
+        //setImages();
     }
 
     render() { 
