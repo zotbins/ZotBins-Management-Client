@@ -66,4 +66,14 @@ router.get('/weight/:startTimestamp/:endTimestamp', async function(req, res, nex
 
 });
 
+router.get('/image-list', async function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  fetch("https://zotbins.pythonanywhere.com/observation/get/image-list", {
+    method: 'GET'
+  })
+  .then(response => response.json())
+  .then(data => res.send(data));
+
+});
+
 module.exports = router;
