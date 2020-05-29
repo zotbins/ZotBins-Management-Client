@@ -63,19 +63,6 @@ function columns(containerWidth) {
 
 var img; 
 
-function getImages(){
-    let request = new XMLHttpRequest();
-    request.open('GET', 'https://zotbins.pythonanywhere.com/observation/get/image-list');
-    request.send();
-    request.onload = () => {
-        if(request.states == 200){
-            img = JSON.parse(request.response);
-        }else{
-            console.log(`error ${request.status} ${request.statusText}`);
-        }
-    }
-}
-
 function setImages(){
     let temp = img.imageNames;
     var i;
@@ -97,11 +84,39 @@ function setImages(){
 class GalleryPage extends React.Component {
     constructor(props){
         super(props);
+
+        this.state = {
+          imageList: null
+        }
         //getImages();
         //setImages();
     }
 
+    componentDidMount() {
+      this.getImages();
+    }
+
+    getImages(){
+      // let request = new XMLHttpRequest();
+      // request.open('GET', 'https://zotbins.pythonanywhere.com/observation/get/image-list');
+      // request.send();
+      // request.onload = () => {
+      //     if(request.states == 200){
+      //         img = JSON.parse(request.response);
+      //     }else{
+      //         console.log(`error ${request.status} ${request.statusText}`);
+      //     }
+      // }
+  
+      fetch("http://localhost:9000/image-list", { method: "GET" }).then(response => response.json()).then(data => this.setState({imageList: data["imageNames"]}));
+    }
+  
+
     render() { 
+        if(this.state.imageList === null) {
+          return (<h1>Loading images</h1>);
+        }
+        else {
         return (
             <div id={"gallery-page"}>
                 <div>
@@ -116,6 +131,7 @@ class GalleryPage extends React.Component {
                 </div>
             </div>
         )
+      }
     }
 }
 
