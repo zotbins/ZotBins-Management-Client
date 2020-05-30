@@ -18,7 +18,7 @@ class GalleryPage extends React.Component {
         super(props);
 
         this.state = {
-          photos: []
+          photos: [{}]
         }
     }
 
