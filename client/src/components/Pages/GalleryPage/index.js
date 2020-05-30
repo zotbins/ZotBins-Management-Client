@@ -18,23 +18,7 @@ class GalleryPage extends React.Component {
         super(props);
 
         this.state = {
-          photos: [
-            {
-                src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-                width: 4,
-                height: 3
-            },
-            {
-                src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-                width: 1,
-                height: 1
-            },
-            {
-                src: "https://zotbins.pythonanywhere.com/uploads/2020-05-24_203450_ZBin7.jpg",
-                width: 1,
-                height: 1
-            }
-          ]
+          photos: []
         }
     }
 
@@ -70,6 +54,26 @@ class GalleryPage extends React.Component {
         }
         this.setState({photos: joined});
     }
+
+    componentDidMount() {
+      this.getImages();
+    }
+
+    getImages(){
+      // let request = new XMLHttpRequest();
+      // request.open('GET', 'https://zotbins.pythonanywhere.com/observation/get/image-list');
+      // request.send();
+      // request.onload = () => {
+      //     if(request.states == 200){
+      //         img = JSON.parse(request.response);
+      //     }else{
+      //         console.log(`error ${request.status} ${request.statusText}`);
+      //     }
+      // }
+  
+      fetch("http://localhost:9000/image-list", { method: "GET" }).then(response => response.json()).then(data => this.setState({imageList: data["imageNames"]}));
+    }
+  
 
     render() { 
         if(this.state.imageList === null) {
