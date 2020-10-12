@@ -1,5 +1,4 @@
 import React from 'react';
-import Chart from "chart.js";
 import { Card } from 'antd';
 import Map from 'pigeon-maps';
 

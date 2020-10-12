@@ -21,4 +21,3 @@ The web app will be running on `http://localhost:3000/` and will detect changes 
 2. Open a terminal in `server/` and install dependencies with `npm install` or `yarn install`  
 3. Run the webapp with `nodemon`  
 The web app will be running on `http://localhost:9000/` and will detect changes in source code.
-
