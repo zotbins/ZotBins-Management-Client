@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon, Switch } from 'antd';
 
 class Navigation extends React.Component {
     constructor(props){
@@ -42,7 +42,6 @@ class Navigation extends React.Component {
       render() {
         const { windowWidth } = this.state;
         const collapsedNavigationBar = windowWidth < 1200;
-
         return (
           <div id="navigation-div"> 
             <Menu
@@ -70,7 +69,6 @@ class Navigation extends React.Component {
               <Icon type="picture" /><span>Gallery</span>
               <Link to={ROUTES.GALLERY}></Link>
             </Menu.Item>
-
             </Menu>
           </div>
         );
