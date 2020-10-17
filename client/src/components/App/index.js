@@ -6,28 +6,55 @@ import TopBar from '../TopBar';
 import DashboardPage from '../Pages/DashboardPage';
 import BinStatusPage from '../Pages/BinStatusPage';
 import DeviceRegistrationPage from '../Pages/DeviceRegistrationPage';
+import GalleryPage from '../Pages/GalleryPage';
 
 import * as ROUTES from '../../constants/routes';
 
 class App extends Component {
+    constructor(props){
+        super(props); 
+
+        this.state = {
+            windowWidth: 0,
+            windowHeight: 0
+        }
+    }
+
+    componentDidMount(){
+        this.updateDimensions();
+        window.addEventListener("resize", this.updateDimensions.bind(this));
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener("resize", this.updateDimensions.bind(this));
+    }
+
+    updateDimensions() {
+        let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+        let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
+
+        this.setState({windowWidth, windowHeight});
+    }
+
     render() {
+        const { windowWidth } = this.state;
+        const collapsedPage = windowWidth < 1200;
+        var pageID = collapsedPage ? "app-router__dashboard-column-collapsed" : "app-router__dashboard-column"; 
+
         return (
             <Router>
-                <div style={{width: "100vw", zIndex: 2, display: "flex", flexDirection: "column", height: 60, position: "fixed"}}>
+                <div id="app-router__topbar-and-nav">
                     <TopBar />
-                    <div style={{width: "18%"}}>
+                    <div id="app-router__nav-column">
                     <Navigation />
                     </div>  
                 </div>
-                <div style={{float: "right", position: "relative", width: "82%", top: 60}}>
+                <div id={pageID}>
                         <Route exact path={ROUTES.DASHBOARD} component={DashboardPage} />
                         <Route path={ROUTES.BIN_STATUS} component={BinStatusPage} />
                         <Route path={ROUTES.BIN_REGISTRATION} component={DeviceRegistrationPage} />
-                    
-
-                  
+                        <Route path={ROUTES.GALLERY} component={GalleryPage} />
                 </div>
-                
             </Router>
         );
     }

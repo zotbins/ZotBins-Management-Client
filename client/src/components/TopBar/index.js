@@ -4,30 +4,69 @@ import { Input, Avatar, Divider, Icon } from 'antd';
 import zotbins from '../../images/ZotBins_Icon.png';
 
 class TopBar extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            windowWidth: 0,
+            windowHeight: 0
+        }
+    }
+
+    componentDidMount(){
+        this.updateDimensions();
+        window.addEventListener("resize", this.updateDimensions.bind(this));
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener("resize", this.updateDimensions.bind(this));
+    }
+
+    updateDimensions() {
+        let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+        let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
+
+        this.setState({windowWidth, windowHeight});
+    }
+    
     render() {
+        const { windowWidth } = this.state;
+        const collapsedTopBar = windowWidth < 1200;
+        const imageID = collapsedTopBar ? "topbar-div__zotbins-img-collapsed" : "topbar-div__zotbins-img";
+        const zotbinsID = collapsedTopBar ? "topbar-div__zotbins-collapsed" : "topbar-div__zotbins";
+        
         return (
-            <div style={{display: "flex", flexDirection: "row", width: "100vw", zIndex: 2, boxShadow: "5px 5px 15px 5px rgba(0,0,0,0.05)"}}>
-                <div style={{display: "flex", flexDirection: "row", minWidth: '18%', height: 60, backgroundColor: "#454545"}}>
-                    <img src={zotbins} style={{ margin: "0.5rem 0.5rem 1rem 1rem", height: "35px "}}/>
-                    <h3 style={{color: "white", margin: "1rem 0", letterSpacing: "3px", fontWeight: "600"}}>ZOTBINS</h3>
+            <div id="topbar-div">
+            
+                {collapsedTopBar 
+                ? <div id={zotbinsID}>
+                    <img id={imageID} src={zotbins}/>
                 </div>
-                <div style={{display: "flex", alignItems:"center", background: "white", padding: "0 1rem 0 1.5rem"}}>
+                : <div id={zotbinsID}>
+                    <img id={imageID} src={zotbins}/>
+                    <h3>ZOTBINS</h3>
+                </div>
+                }
+            
+                <div id="topbar-div__search-icon">
                     <Icon type="search" />
                 </div>
-                <div style={{width: "100%"}}>
-                    
-                    <Input style={{height: "100%", width: "100%", border: 0}} placeholder="Enter Bin ID, Building Name, or Location" />
+            
+                <div id="topbar-div__search-bar">
+                    <Input placeholder="Enter Bin ID, Building Name, or Location" />
                 </div>
-                <div style={{padding: "0.6rem", minWidth: 356, background: "white"}}>
-                    <div style={{display: "flex", flexDirection: "row", margin: "auto", width: "fit-content", alignItems: "center" }}>
-                        <Icon type="question-circle" style={{marginRight: "1rem"}} />
-                        <Icon type="bell" />
-                        <Divider type="vertical" style={{height: "1.5rem", margin: "0 1rem"}}/>
-                        <h3 style={{marginBottom: 0, margin: "0 1rem"}}>Peter Anteater</h3>
-                        <Icon style={{marginRight: "1rem"}} type="caret-down" />
-                        <Avatar size="large" icon="user" />
+            
+                <div id="topbar-div__info">
+                    <div id="topbar-div__info-container">
+                        <Icon id="topbar-div__info-container--question" type="question-circle"/>
+                        <Icon id="topbar-div__info-container--bell" type="bell" />
+                        <Divider id="topbar-div__info-container--divider" type="vertical"/>
+                        <h3>Peter Anteater</h3>
+                        <Icon id="topbar-div__info-container--caret" type="caret-down" />
+                        <Avatar id="topbar-div__info-container--avatar" size="large" icon="user" />
                     </div>
                 </div>
+            
             </div>
         )
     }

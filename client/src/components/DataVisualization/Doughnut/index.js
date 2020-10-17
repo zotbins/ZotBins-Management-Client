@@ -39,8 +39,8 @@ class Doughnut extends React.Component {
     render() {
         return (
             <div>
-                <Card style={{margin: "1rem"}}>
-                    <h3 style={{fontWeight: 300, color: "#43425D", marginBottom: "1.5rem"}}>Disposable Percentage</h3>
+                <Card id="doughnut-card">
+                    <h3>Disposable Percentage</h3>
                 <canvas
                     id="myChart"
                     ref={this.chartRef}
