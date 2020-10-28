@@ -66,7 +66,7 @@ class Navigation extends React.Component {
               <Link to={ROUTES.BIN_REGISTRATION}></Link>
             </Menu.Item>
             <Menu.Item key="4">
-              <Icon type="picture" /><span>Gallery</span>
+              <Icon type="picture" /><span>Bin Snapshots</span>
               <Link to={ROUTES.GALLERY}></Link>
             </Menu.Item>
             </Menu>
