@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, Col, Row } from 'antd';
-import Chart from "chart.js";
+import RealtimeWeightCard from "./RealtimeWeightCard";
 
 var today = new Date();
-var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds() + ((today.getHours() >= 12) ? " PM" : " AM");
-var day = today.getMonth() + '/' + today.getDate() + '/' + today.getFullYear();
+var time = today.getHours() + ':' + today.getMinutes() + ((today.getHours() >= 12) ? " PM" : " AM");
+var day = (today.getMonth()+1) + '/' + today.getDate() + '/' + today.getFullYear();
 
 class CardVisualFeature extends React.Component{
     constructor(props){
@@ -23,13 +23,13 @@ class CardVisualFeature extends React.Component{
                 {this.state.collapsedPage && this.state.middleVersion
                 ?<div>
                     <Row>
-                        <h4 style={{color: 'black', textTransform: 'uppercase'}}>Realtime Data</h4>
+                        <h2 style={{color: 'black', textTransform: 'uppercase', textAlign: 'center'}}>Realtime Data</h2>
                     </Row>
 
                     <Row>
-                        <h4 style={{color: 'grey', fontVariant: 'small-caps'}}>
+                        <h5 style={{color: 'grey', fontVariant: 'small-caps', textAlign: 'center'}}>
                             as of {time} on {day}
-                        </h4>
+                        </h5>
                     </Row> </div>
                 :<div>
                     <Col xs={2} sm={4} md={6} lg={8} xl={10}>
@@ -47,132 +47,30 @@ class CardVisualFeature extends React.Component{
                 <Row gutter={16}>
                     {this.state.collapsedPage && this.state.middleVersion
                         ? <div><Row span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '75%'}}>Total Weight of Waste</span>} bordered={false}>
-                                <Row>
-                                    <Col span={16}>
-                                        <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
-                                            120 lbs
-                                            </h2>
-                                        </Row>
-                                        <Row align="top">
-                                            <h6 style={{color: 'red', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
-                                            - 24.6%
-                                            </h6>
-                                        </Row>
-                                    </Col>
-                                    <Col span={8} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
-                                    </Col>
-                                </Row>
-                            </Card>
+                            <RealtimeWeightCard typeBin={"Total Weight of Waste"} weightOfBin={"120 lbs"} percentChangeOfBin={"- 24.6%"}
+                                percentChangeColor={"red"}/>
                         </Row>
                         <Row span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '75%'}}>Total Weight of Recyclable</span>} bordered={false}>
-                                <Row>
-                                    <Col span={16}>
-                                        <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
-                                            40 lbs
-                                            </h2>
-                                        </Row>
-                                        <Row align="top">
-                                            <h6 style={{color: '#42CE38', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
-                                            + 13.4%
-                                            </h6>
-                                        </Row>
-                                    </Col>
-                                    <Col span={8} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70" ></img>
-                                    </Col>
-                                </Row>                            
-                            </Card>
+                            <RealtimeWeightCard typeBin={"Total Weight of Recyclable"} weightOfBin={"40 lbs"} percentChangeOfBin={"+ 13.4%"}
+                                percentChangeColor={"#42CE38"}/>
                         </Row>
                         <Row span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '75%'}}>Total Weight of Compost</span>} bordered={false}>
-                                <Row>
-                                    <Col span={16}>
-                                        <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
-                                            62 lbs
-                                            </h2>
-                                        </Row>
-                                        <Row align="top">
-                                            <h6 style={{color: 'red', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
-                                            - 11.3%
-                                            </h6>
-                                        </Row>
-                                    </Col>
-                                    <Col span={8} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
-                                    </Col>
-                                </Row>                            
-                            </Card>
+                            <RealtimeWeightCard typeBin={"Total Weight of Compost"} weightOfBin={"62 lbs"} percentChangeOfBin={"- 11.3%"}
+                                percentChangeColor={"red"}/>
                         </Row>
                         </div>
 
                         :<div><Col span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '90%'}}>Total Weight of Waste</span>} bordered={false}>
-                                <Row>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10}>
-                                        <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
-                                            120 lbs
-                                            </h2>
-                                        </Row>
-                                        <Row align="top">
-                                            <h6 style={{color: 'red', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
-                                            - 24.6%
-                                            </h6>
-                                        </Row>
-                                    </Col>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
-                                    </Col>
-                                </Row>
-                            </Card>
+                            <RealtimeWeightCard typeBin={"Total Weight of Waste"} weightOfBin={"120 lbs"} percentChangeOfBin={"- 24.6%"}
+                                percentChangeColor={"red"}/>  
                         </Col>
                         <Col span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '90%'}}>Total Weight of Recyclable</span>} bordered={false}>
-                                <Row>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10}>
-                                        <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
-                                            40 lbs
-                                            </h2>
-                                        </Row>
-                                        <Row align="top">
-                                            <h6 style={{color: '#42CE38', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
-                                            + 13.4%
-                                            </h6>
-                                        </Row>
-                                    </Col>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
-                                    </Col>
-                                </Row>                            
-                            </Card>
+                            <RealtimeWeightCard typeBin={"Total Weight of Recyclable"} weightOfBin={"40 lbs"} percentChangeOfBin={"+ 13.4%"}
+                                percentChangeColor={"#42CE38"}/>
                         </Col>
                         <Col span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '90%'}}>Total Weight of Compost</span>} bordered={false}>
-                                <Row>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10}>
-                                        <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
-                                            62 lbs
-                                            </h2>
-                                        </Row>
-                                        <Row align="top">
-                                            <h6 style={{color: 'red', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
-                                            - 11.3%
-                                            </h6>
-                                        </Row>
-                                    </Col>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
-                                    </Col>
-                                </Row>                            
-                            </Card>
+                            <RealtimeWeightCard typeBin={"Total Weight of Compost"} weightOfBin={"62 lbs"} percentChangeOfBin={"- 11.3%"}
+                                percentChangeColor={"red"}/>                        
                         </Col>
                         </div>  
                     }

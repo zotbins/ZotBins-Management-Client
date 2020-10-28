@@ -4,8 +4,7 @@ import { Row, Col} from "antd";
 import ChartTabs from "../../DataVisualization/ChartTabs";
 import Doughnut from "../../DataVisualization/Doughnut";
 import BinMap from "../../DataVisualization/BinMap";
-import Table from "../../DataVisualization/BinTable";
-import CardVisualFeature from "../../CardVisualFeature"
+import CardVisualFeature from "../../CardVisualFeature";
 // TODO: import tippersRequest.js functions here, to pass to components
 
 class DashboardPage extends React.Component {
@@ -48,13 +47,10 @@ class DashboardPage extends React.Component {
                             <h1>Overall Data</h1>
                         </Col>
                     </Row>
-                    <Row>
-                        <CardVisualFeature />
-                    </Row>
-                    <Row>
+                    <Row gutter={32}>
                         <Col span={17}>
                             <ChartTabs />
-                            <Table />
+                            <CardVisualFeature />
                         </Col>
                         <Col span={7}>
                             <Doughnut />
@@ -92,9 +88,6 @@ class DashboardPage extends React.Component {
                     
                     <Row>
                         <BinMap />
-                    </Row>
-                    <Row>
-                        <Table />
                     </Row>
                 </div>
                 }

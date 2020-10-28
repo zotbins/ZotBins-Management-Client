@@ -58,7 +58,7 @@ class Navigation extends React.Component {
               <Link to={ROUTES.DASHBOARD}></Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="api" /><span> Bin Status</span>
+              <Icon type="api" /><span>Bin Status</span>
               <Link to={ROUTES.BIN_STATUS}></Link>
             </Menu.Item>
             <Menu.Item key="3">
