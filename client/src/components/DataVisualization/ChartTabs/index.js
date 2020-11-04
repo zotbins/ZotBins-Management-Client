@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, Tabs } from 'antd'
 import LineChart from '../LineChart'
 import ProgressBar from '../ProgressBar'
+import DiversionChart from '../DiversionChart'
 
 const { TabPane } = Tabs
 
@@ -26,7 +27,13 @@ class ChartTabs extends React.Component {
             <TabPane tab="Diversion" key="3"></TabPane>
           </Tabs>
 
-          {this.state.activeTab == 2 ? <ProgressBar /> : <LineChart />}
+          {this.state.activeTab == 2 ? (
+            <ProgressBar />
+          ) : this.state.activeTab == 1 ? (
+            <LineChart />
+          ) : (
+            <DiversionChart />
+          )}
         </Card>
       </div>
     )
