@@ -1,12 +1,12 @@
 import React from 'react'
-import Table from '../../DataVisualization/BinTable'
+import { BinTable } from '../../DataVisualization'
 
 class BinStatusPage extends React.Component {
   render() {
     return (
       <div>
         <h1>BinStatusPage</h1>
-        <Table />
+        <BinTable />
       </div>
     )
   }

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Card, Tabs } from 'antd'
-import LineChart from '../LineChart'
-import ProgressBar from '../ProgressBar'
-import DiversionChart from '../DiversionChart'
+import { LineChart, ProgressBar, DiversionChart } from '../'
 
 const { TabPane } = Tabs
 

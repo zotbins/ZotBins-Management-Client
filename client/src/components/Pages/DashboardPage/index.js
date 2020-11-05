@@ -1,9 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from 'antd'
-import ChartTabs from '../../DataVisualization/ChartTabs'
-import Doughnut from '../../DataVisualization/Doughnut'
-import BinMap from '../../DataVisualization/BinMap'
+import { ChartTabs, Doughnut, BinMap } from '../../DataVisualization'
 import CardVisualFeature from '../../CardVisualFeature'
 // TODO: import tippersRequest.js functions here, to pass to components
 
