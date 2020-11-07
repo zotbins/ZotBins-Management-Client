@@ -9,6 +9,7 @@
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "pigeon-maps": "^0.14.0",
+    "pigeon-overlay": "^0.2.3",
     "react": "^16.9.0",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.9.0",

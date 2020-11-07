@@ -53,7 +53,7 @@ h3 {
 
 /* BinMap styling */
 #bin-map-card {
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   margin: 1rem; }
 
 /* BinTable styling */

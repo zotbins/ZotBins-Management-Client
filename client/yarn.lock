@@ -9552,6 +9552,11 @@ pigeon-maps@^0.14.0:
   resolved "https://registry.yarnpkg.com/pigeon-maps/-/pigeon-maps-0.14.0.tgz#af5bc3fd32e701451db1ac999ec0eef5d89b1d61"
   integrity sha512-ee7yceJpRH3Jpb5iooYn0oqykNs18P3zjO7zKvq+9nf109QoiYx9b6Tniy8LxxpG83uDez0+DrGJOOHiW7gXnw==
 
+pigeon-overlay@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/pigeon-overlay/-/pigeon-overlay-0.2.3.tgz#46d08f5661ddb84309549cb2ff45df6c62a71e8d"
+  integrity sha512-mkHwYzDdzdd45XmWW3RB6Vxi0cj1F2CWRzFS8lyDmZcKiruKwhoAa4D3d/hfoO/R3TeHK3IJNNoVV02hP2PJ6Q==
+
 pinkie-promise@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/pinkie-promise/-/pinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
