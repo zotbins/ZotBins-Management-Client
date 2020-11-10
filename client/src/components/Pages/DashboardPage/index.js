@@ -1,10 +1,11 @@
 import React from "react";
 
-import { Row, Col} from "antd";
+import { Row, Col, Modal, Button} from "antd";
 import ChartTabs from "../../DataVisualization/ChartTabs";
 import Doughnut from "../../DataVisualization/Doughnut";
 import BinMap from "../../DataVisualization/BinMap";
 import CardVisualFeature from "../../CardVisualFeature";
+import IntervalOption from "../../IntervalOption";
 // TODO: import tippersRequest.js functions here, to pass to components
 
 class DashboardPage extends React.Component {
@@ -13,11 +14,44 @@ class DashboardPage extends React.Component {
 
         this.state = {
             windowWidth: 0,
-            windowHeight: 0
+            windowHeight: 0,
+            time: [new Date(Date.now() - 3600000 - 28800000).toISOString(), new Date(Date.now() - 28800000).toISOString()],
+            usage_count: [0,0,0]      
         }
+
+        this.handleTimeChanges = this.handleTimeChanges.bind(this);
     }
 
+    handleTimeChanges(i) {
+      this.setState({time: i});
+      this.getCountData(i);
+      console.log(i);
+    }
+
+    async getCountData(time) {
+      fetch(
+        "http://localhost:9000/bin_breakbeam_count/" + time[0] + "/" + time[1],
+        { method: "GET" }
+      )
+        .then(res => res.json())
+        .then(res =>
+         {
+          this.setState({
+            usage_count: [res.recycle, res.landfill, res.compost]
+          });
+         }
+        );
+    }
+
+    getCSV() {
+      let a = document.createElement('a');
+      a.href = "http://localhost:9000/csv/ZBin3B/2020-02-04/2020-02-05";
+      a.download = 'data.csv';
+      a.click();
+    }
+    
     componentDidMount(){
+        this.getCountData(this.state.time);
         this.updateDimensions();
         window.addEventListener("resize", this.updateDimensions.bind(this));
     }
@@ -32,6 +66,7 @@ class DashboardPage extends React.Component {
 
         this.setState({windowWidth, windowHeight});
     }
+
     render() { 
         const { windowWidth } = this.state;
         const collapsedPage = windowWidth < 1200;
@@ -43,9 +78,15 @@ class DashboardPage extends React.Component {
                 {!collapsedPage
                 ?<div>
                     <Row>
-                        <Col>
+                        <div style={{display: "flex"}}>
                             <h1>Overall Data</h1>
-                        </Col>
+                            <IntervalOption updateDates={this.handleTimeChanges}/>
+                            <div style={{display: "flex", margin:"2rem 1rem auto auto"}}>
+                                <Button type="primary" onClick={this.getCSV}>
+                                  Export CSV
+                                </Button>
+                          </div>
+                        </div>
                     </Row>
                     <Row gutter={32}>
                         <Col span={17}>
@@ -60,9 +101,15 @@ class DashboardPage extends React.Component {
                 </div>
                 :<div>
                     <Row>
-                        <Col>
+                        <div style={{display: "flex"}}>
                             <h1>Overall Data</h1>
-                        </Col>
+                            <IntervalOption updateDates={this.handleTimeChanges}/>
+                            <div style={{display: "flex", margin:"2rem 1rem auto auto"}}>
+                                <Button type="primary" onClick={this.getCSV}>
+                                  Export CSV
+                                </Button>
+                          </div>
+                        </div>
                     </Row>
                     <Row>
                         <ChartTabs />
