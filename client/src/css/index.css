@@ -16,7 +16,7 @@ h1 {
   color: #43425d !important;
   font-size: 40px !important;
   font-weight: 300 !important;
-  margin: 2rem 2rem 0px !important; }
+  margin: 1rem 2rem 0rem 2rem !important; }
 
 h3 {
   color: #43425d;
@@ -70,6 +70,15 @@ h3 {
   display: flex;
   flex-direction: row;
   margin: auto; }
+
+#export-button {
+  display: flex;
+  margin: 2rem 1rem auto auto;
+}
+
+#select-date {
+  display: flex;
+}
 
 /* Gallery Page styling */
 #gallery-page {

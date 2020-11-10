@@ -20,6 +20,7 @@ class DashboardPage extends React.Component {
         }
 
         this.handleTimeChanges = this.handleTimeChanges.bind(this);
+        this.getCSV = this.getCSV.bind(this);
     }
 
     handleTimeChanges(i) {
@@ -45,7 +46,9 @@ class DashboardPage extends React.Component {
 
     getCSV() {
       let a = document.createElement('a');
-      a.href = "http://localhost:9000/csv/ZBin3B/2020-02-04/2020-02-05";
+      a.href = "http://localhost:9000/csv/ZBin3B/" 
+        + this.state.time[0].substring(0,10) +  "(" + this.state.time[0].substring(11,19) + ")/" 
+        + this.state.time[1].substring(0,10) + "(" + this.state.time[1].substring(11,19) + ")";
       a.download = 'data.csv';
       a.click();
     }
@@ -78,10 +81,10 @@ class DashboardPage extends React.Component {
                 {!collapsedPage
                 ?<div>
                     <Row>
-                        <div style={{display: "flex"}}>
+                        <div id="select-date">
                             <h1>Overall Data</h1>
                             <IntervalOption updateDates={this.handleTimeChanges}/>
-                            <div style={{display: "flex", margin:"2rem 1rem auto auto"}}>
+                            <div id="export-button">
                                 <Button type="primary" onClick={this.getCSV}>
                                   Export CSV
                                 </Button>
@@ -101,10 +104,10 @@ class DashboardPage extends React.Component {
                 </div>
                 :<div>
                     <Row>
-                        <div style={{display: "flex"}}>
+                      <div id="select-date">
                             <h1>Overall Data</h1>
                             <IntervalOption updateDates={this.handleTimeChanges}/>
-                            <div style={{display: "flex", margin:"2rem 1rem auto auto"}}>
+                            <div id="export-button">
                                 <Button type="primary" onClick={this.getCSV}>
                                   Export CSV
                                 </Button>
