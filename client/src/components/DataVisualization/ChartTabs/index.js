@@ -19,7 +19,7 @@ class ChartTabs extends React.Component {
     render() {
         return (
             <div>
-                <Card style={{margin: "1rem"}}>
+                <Card id = "bin-table-card ">
                     <Tabs activeKey={this.state.activeTab} onChange={this.changeTab}>
                         <TabPane tab="Weight" key="1">
 

@@ -92,12 +92,12 @@ class IntervalOption extends React.Component {
             return (
                 <div>
                     <Dropdown overlay={this.menu}>
-                        <Button style={{marginTop: "2rem"}} >
+                        <Button id = "dropdown-button-overlay">
                             {title} <Icon type="down" />
                         </Button>
                     </Dropdown>
 
-                    <Button style={{margin: "2rem 0 0 1rem"}} onClick={this.handleModeChange} shape="circle" icon="calendar" />
+                    <Button id = "dropdown-button" onClick={this.handleModeChange} shape="circle" icon="calendar" />
                 </div>
             )
         }
@@ -110,10 +110,10 @@ class IntervalOption extends React.Component {
                         placeholder={['Start Time', 'End Time']}
                         onChange={this.onChange}
                         onOk={this.onOk}
-                        style={{marginTop: "2rem"}}
+                        id = "rangepicker-style"
                         />
 
-                <Button style={{margin: "2rem 0 0 1rem"}} onClick={this.handleModeChange} shape="circle" icon="calendar" />
+                <Button id = "rangepicker-button-style" onClick={this.handleModeChange} shape="circle" icon="calendar" />
             </div>
 
             

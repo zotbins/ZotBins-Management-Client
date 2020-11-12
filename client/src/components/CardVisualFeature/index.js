@@ -23,7 +23,7 @@ class CardVisualFeature extends React.Component{
                 {this.state.collapsedPage && this.state.middleVersion
                 ?<div>
                     <Row>
-                        <h4 style={{color: 'black', textTransform: 'uppercase'}}>Realtime Data</h4>
+                        <h4 id ="cardVisualFeature__collapsed-realtime-data">Realtime Data</h4>
                     </Row>
 
                     <Row>
@@ -33,11 +33,11 @@ class CardVisualFeature extends React.Component{
                     </Row> </div>
                 :<div>
                     <Col xs={2} sm={4} md={6} lg={8} xl={10}>
-                        <h2 style={{color: 'black', textTransform: 'uppercase', paddingLeft: '20px'}}>Realtime Data</h2>
+                        <h2 id="cardVisualFeature__uncollapsed-realtime-data">Realtime Data</h2>
                     </Col>
 
-                    <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                        <h3 style={{float: 'right', color: 'grey', fontVariant: 'small-caps'}}>
+                    <Col xs={2} sm={4} md={6} lg={8} xl={10} id="cardVisualFeature__column-time-day">
+                        <h3 id = "cardVisualFeature__text-time-day">
                             as of {time} on {day}
                         </h3>
                     </Col></div>
@@ -47,64 +47,64 @@ class CardVisualFeature extends React.Component{
                 <Row gutter={16}>
                     {this.state.collapsedPage && this.state.middleVersion
                         ? <div><Row span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '75%'}}>Total Weight of Waste</span>} bordered={false}>
+                            <Card title={<span id = "cardVisualFeature__card-collapsed-title-text">Total Weight of Waste</span>} bordered={false}>
                                 <Row>
                                     <Col span={16}>
                                         <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
+                                            <h2 id = "cardVisualFeature__card-weight-text">
                                             120 lbs
                                             </h2>
                                         </Row>
                                         <Row align="top">
-                                            <h6 style={{color: 'red', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
+                                            <h6 id = "cardVisualFeature__card-percentage-text">
                                             - 24.6%
                                             </h6>
                                         </Row>
                                     </Col>
-                                    <Col span={8} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
+                                    <Col span={8} id = "cardVisualFeature__card-column">
+                                        <img id = "cardVisualFeature__card-graph-img" src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
                                     </Col>
                                 </Row>
                             </Card>
                         </Row>
                         <Row span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '75%'}}>Total Weight of Recyclable</span>} bordered={false}>
+                            <Card title={<span id = "cardVisualFeature__card-collapsed-title-text">Total Weight of Recycling</span>} bordered={false}>
                                 <Row>
                                     <Col span={16}>
                                         <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
+                                        <h2 id = "cardVisualFeature__card-weight-text">
                                             40 lbs
                                             </h2>
                                         </Row>
                                         <Row align="top">
-                                            <h6 style={{color: '#42CE38', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
+                                        <h6 id = "cardVisualFeature__card-percentage-text">
                                             + 13.4%
                                             </h6>
                                         </Row>
                                     </Col>
-                                    <Col span={8} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70" ></img>
+                                    <Col span={8} id = "cardVisualFeature__card-column">
+                                        <img id = "cardVisualFeature__card-graph-img" src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70" ></img>
                                     </Col>
                                 </Row>                            
                             </Card>
                         </Row>
                         <Row span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '75%'}}>Total Weight of Compost</span>} bordered={false}>
+                            <Card title={<span id = "cardVisualFeature__card-collapsed-title-text">Total Weight of Compost</span>} bordered={false}>
                                 <Row>
                                     <Col span={16}>
                                         <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
+                                        <h2 id = "cardVisualFeature__card-weight-text">
                                             62 lbs
                                             </h2>
                                         </Row>
                                         <Row align="top">
-                                            <h6 style={{color: 'red', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
+                                        <h6 id = "cardVisualFeature__card-percentage-text">
                                             - 11.3%
                                             </h6>
                                         </Row>
                                     </Col>
-                                    <Col span={8} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
+                                    <Col span={8} id = "cardVisualFeature__card-column">
+                                        <img id = "cardVisualFeature__card-graph-img" src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="90" height="70"></img>
                                     </Col>
                                 </Row>                            
                             </Card>
@@ -112,64 +112,64 @@ class CardVisualFeature extends React.Component{
                         </div>
 
                         :<div><Col span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '90%'}}>Total Weight of Waste</span>} bordered={false}>
+                            <Card title={<span id = "cardVisualFeature__card-uncollapsed-title-text">Total Weight of Waste</span>} bordered={false}>
                                 <Row>
                                     <Col xs={2} sm={4} md={6} lg={8} xl={10}>
                                         <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
+                                            <h2 id = "cardVisualFeature__card-weight-text">
                                             120 lbs
                                             </h2>
                                         </Row>
                                         <Row align="top">
-                                            <h6 style={{color: 'red', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
+                                            <h6 id = "cardVisualFeature__card-percentage-text">
                                             - 24.6%
                                             </h6>
                                         </Row>
                                     </Col>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
+                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} id = "cardVisualFeature__card-column">
+                                        <img id = "cardVisualFeature__card-graph-img" src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
                                     </Col>
                                 </Row>
                             </Card>
                         </Col>
                         <Col span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '90%'}}>Total Weight of Recyclable</span>} bordered={false}>
+                            <Card title={<span id = "cardVisualFeature__card-uncollapsed-title-text">Total Weight of Recycling</span>} bordered={false}>
                                 <Row>
                                     <Col xs={2} sm={4} md={6} lg={8} xl={10}>
                                         <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
+                                            <h2 id = "cardVisualFeature__card-weight-text">
                                             40 lbs
                                             </h2>
                                         </Row>
                                         <Row align="top">
-                                            <h6 style={{color: '#42CE38', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
+                                            <h6 id = "cardVisualFeature__card-positive-percentage-text">
                                             + 13.4%
                                             </h6>
                                         </Row>
                                     </Col>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
+                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} id = "cardVisualFeature__card-column">
+                                        <img id = "cardVisualFeature__card-graph-img" src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
                                     </Col>
                                 </Row>                            
                             </Card>
                         </Col>
                         <Col span={8}>
-                            <Card title={<span style={{color: 'grey', fontSize: '90%'}}>Total Weight of Compost</span>} bordered={false}>
+                            <Card title={<span id = "cardVisualFeature__card-uncollapsed-title-text">Total Weight of Compost</span>} bordered={false}>
                                 <Row>
                                     <Col xs={2} sm={4} md={6} lg={8} xl={10}>
                                         <Row>
-                                            <h2 style={{color: '#616161', float: 'left', fontWeight:'bold'}}>
+                                            <h2 id = "cardVisualFeature__card-weight-text">
                                             62 lbs
                                             </h2>
                                         </Row>
                                         <Row align="top">
-                                            <h6 style={{color: 'red', float: 'left', fontWeight:'bold', fontVariant: 'small-caps'}}>
+                                            <h6 id = "cardVisualFeature__card-percentage-text">
                                             - 11.3%
                                             </h6>
                                         </Row>
                                     </Col>
-                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} style={{float: 'right'}}>
-                                        <img style={{opacity: '0.75'}} src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
+                                    <Col xs={2} sm={4} md={6} lg={8} xl={10} id = "cardVisualFeature__card-column">
+                                        <img id = "cardVisualFeature__card-graph-img" src="https://library.kissclipart.com/20180827/sqe/kissclipart-bar-chart-clipart-bar-chart-clip-art-76882c69095eb289.png" width="150" height="100"></img>
                                     </Col>
                                 </Row>                            
                             </Card>

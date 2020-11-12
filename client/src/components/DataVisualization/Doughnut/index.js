@@ -16,14 +16,14 @@ class Doughnut extends React.Component {
 
                 datasets: [{
                     data: [15, 20, 30],
-                    backgroundColor: ["#357B23","#3876AC","#616161"],
+                    backgroundColor: ['rgba(254, 247, 113)','rgba(213, 252, 112)' ,'rgba(121, 214, 251)'],
                 }],
             
                 // These labels appear in the legend and in the tooltips when hovering different arcs
                 labels: [
                     'Compost',
                     'Recycle',
-                    'Waste'
+                    'Landfill'
                 ]
             },
             options: {

@@ -16,19 +16,19 @@ class LineChart extends React.Component {
               labels: ["Jan", "Feb", "March"],
               datasets: [
                   {
-                      label: "Waste",
+                      label: "Landfill",
                       data: [86, 27, 91],
-                      backgroundColor: 'rgba(97, 97, 97, 0.53)',
+                      backgroundColor: 'rgba(121, 214, 251, 0.53)',
                   },
                   {
                       label: "Recycle",
                       data: [30, 77, 51],
-                      backgroundColor: 'rgba(56, 118, 172, 0.53)',
+                      backgroundColor: 'rgba(213, 252, 112, 0.53)',
                   },
                   {
                       label: "Compost",
                       data: [60, 57, 25],
-                      backgroundColor: 'rgba(53, 123, 35, 0.53)',
+                      backgroundColor: 'rgba(254, 247, 113, 0.53)',
                   },
 
               ]}})  

@@ -34,26 +34,20 @@ class DoughnutGraph extends React.Component {
 
       return (
         <div>
-          <Card style={{ margin: "1rem" }}>
+          <Card id="doughtnut-card">
             {/* <div id={"container"}></div> */}
-            <h3
-            style={{
-              fontWeight: 300,
-              color: "#43425D",
-              marginBottom: "1.5rem"
-            }}
-          >
+            <h3 id = "doughtnut-text-style">
             Disposable Count
           </h3>
             <Doughnut
             height={300}
             data={{
-              labels: ["Recycle", "Waste", "Compost"],
+              labels: ["Recycle", "Landfill", "Compost"],
               datasets: [
                 {
                   data: this.state.data,
-                  backgroundColor: ["#3876AC88", "#61616188", "#357B2388"],
-                  hoverBackgroundColor: ["#3876AC", "#616161", "#357B23"]
+                  backgroundColor: ['rgba(213, 252, 112)', 'rgba(121, 214, 251)', 'rgba(254, 247, 113)'],
+                  hoverBackgroundColor: ['rgba(213, 252, 112)', 'rgba(121, 214, 251)', 'rgba(254, 247, 113)']
                 }
               ]
             }}
