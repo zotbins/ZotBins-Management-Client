@@ -46,7 +46,7 @@ class DashboardPage extends React.Component {
 
     getCSV() {
       let a = document.createElement('a');
-      a.href = "http://localhost:9000/csv/ZBin3B/" 
+      a.href = "http://localhost:9000/csv/ZBin7/" 
         + this.state.time[0].substring(0,10) +  "(" + this.state.time[0].substring(11,19) + ")/" 
         + this.state.time[1].substring(0,10) + "(" + this.state.time[1].substring(11,19) + ")";
       a.download = 'data.csv';
