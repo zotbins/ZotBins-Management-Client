@@ -6,6 +6,7 @@ import Doughnut from "../../DataVisualization/Doughnut";
 import BinMap from "../../DataVisualization/BinMap";
 import CardVisualFeature from "../../CardVisualFeature";
 import IntervalOption from "../../IntervalOption";
+import DataDownload from "../../DataDownload";
 // TODO: import tippersRequest.js functions here, to pass to components
 
 class DashboardPage extends React.Component {
@@ -85,9 +86,7 @@ class DashboardPage extends React.Component {
                             <h1>Overall Data</h1>
                             <IntervalOption updateDates={this.handleTimeChanges}/>
                             <div id="export-button">
-                                <Button type="primary" onClick={this.getCSV}>
-                                  Export CSV
-                                </Button>
+                                <DataDownload getCSV={this.getCSV}/>
                           </div>
                         </div>
                     </Row>
@@ -108,9 +107,7 @@ class DashboardPage extends React.Component {
                             <h1>Overall Data</h1>
                             <IntervalOption updateDates={this.handleTimeChanges}/>
                             <div id="export-button">
-                                <Button type="primary" onClick={this.getCSV}>
-                                  Export CSV
-                                </Button>
+                                <DataDownload getCSV={this.getCSV}/>
                           </div>
                         </div>
                     </Row>
