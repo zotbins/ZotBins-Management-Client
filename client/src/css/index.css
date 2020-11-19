@@ -33,28 +33,34 @@ h3 {
   z-index: 2; }
 
 #app-router__nav-column {
-  width: 18%;
- }
+  width: 18%; }
 
 #app-router__dashboard-column {
-  float:right;
+  float: right;
   position: relative;
   width: 82%;
-  top: 60px; 
-}
-
-#app-router__dashboard-column-collapsed {
-  left: 100px;
-  float: left;
-  position: relative;
-  width: 82%;
-  top: 60px; 
-}
+  top: 60px; }
 
 /* BinMap styling */
 #bin-map-card {
-  /* filter: grayscale(1); */
   margin: 1rem; }
+
+.bin-map-marker {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px; }
+  .bin-map-marker:hover {
+    transform: scale(1.2);
+    cursor: pointer; }
+
+#bin-map-marker-normal {
+  background: #4b9f42; }
+
+#bin-map-marker-full {
+  background: #f9ba3c; }
+
+#bin-map-marker-error {
+  background: #9b4538; }
 
 /* BinTable styling */
 #bin-table-card {
@@ -66,26 +72,9 @@ h3 {
   flex-direction: column;
   margin: 0px 3rem; }
 
-#dashboard-page-collapsed {
-  display: flex;
-  flex-direction: row;
-  margin: auto; }
-
-/* Gallery Page styling */
-#gallery-page {
-  display: flex;
-  flex-direction: column;
-  margin: 0px 3rem; }
-
 /* Doughtnut styling */
 #doughnut-card {
   margin: 1rem; }
-
-/*cardVisualFeature styling*/
-#cardVisualFeature {
-  width: 97.5%;
-  margin: 1rem;
-}
 
 /* LineChart styling */
 #line-chart-card {
@@ -93,13 +82,11 @@ h3 {
 
 /* Navigation styling */
 #navigation-div {
-  height: 100%; 
-}
+  height: 100%; }
 
 #navigation-menu {
   background-color: #4e4e4e;
-  height: 100vh; 
-}
+  height: 100vh; }
 
 /* TopBar styling */
 #topbar-div {
@@ -114,27 +101,11 @@ h3 {
   display: flex;
   flex-direction: row;
   height: 60px;
-  min-width: 18%;
-}
-
-#topbar-div__zotbins-collapsed {
-  background-color: #454545;
-  display: flex;
-  flex-direction: row;
-  height: 60px;
-  min-width: 80px;
-}
+  min-width: 18%; }
 
 #topbar-div__zotbins-img {
   height: 35px;
-  margin: 0.5rem 0.5rem 1rem 1rem; 
-  position: relative;
-}
-
-#topbar-div__zotbins-img-collapsed{
-  height: 35px;
-  margin: auto; 
-}
+  margin: 0.5rem 0.5rem 1rem 1rem; }
 
 #topbar-div__zotbins > h3 {
   color: white !important;

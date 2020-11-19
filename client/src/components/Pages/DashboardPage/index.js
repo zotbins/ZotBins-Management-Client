@@ -91,7 +91,6 @@ class DashboardPage extends React.Component {
                 </Row>
               </Row>
             )}
-
             <Row>
               <BinMap />
             </Row>

@@ -49,8 +49,25 @@ h3
 
 /* BinMap styling */
 #bin-map-card 
-	filter: grayscale(1)
+	//filter: grayscale(1)
 	margin: 1rem
+
+.bin-map-marker
+    border-radius: 50%
+    height: 12px
+    width: 12px
+    &:hover
+        transform: scale(1.2)
+        cursor: pointer
+
+#bin-map-marker-normal
+    background: #4b9f42
+
+#bin-map-marker-full
+    background: #f9ba3c
+
+#bin-map-marker-error
+    background: #9b4538
   
 /* BinTable styling */
 #bin-table-card 
