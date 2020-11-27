@@ -57,23 +57,6 @@ class GalleryPage extends React.Component {
     this.getImages()
   }
 
-  getImages() {
-    // let request = new XMLHttpRequest();
-    // request.open('GET', 'https://zotbins.pythonanywhere.com/observation/get/image-list');
-    // request.send();
-    // request.onload = () => {
-    //     if(request.states == 200){
-    //         img = JSON.parse(request.response);
-    //     }else{
-    //         console.log(`error ${request.status} ${request.statusText}`);
-    //     }
-    // }
-
-    fetch('http://localhost:9000/image-list', { method: 'GET' })
-      .then((response) => response.json())
-      .then((data) => this.setState({ imageList: data['imageNames'] }))
-  }
-
   render() {
     if (this.state.imageList === null) {
       return <h1>Loading images</h1>
@@ -83,7 +66,7 @@ class GalleryPage extends React.Component {
           <div>
             <Row>
               <Col>
-                <h1>Gallery</h1>
+                <h1>Bin Snapshots</h1>
               </Col>
             </Row>
             <Row>

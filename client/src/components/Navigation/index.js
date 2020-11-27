@@ -59,7 +59,7 @@ class Navigation extends React.Component {
           </Menu.Item>
           <Menu.Item key="2">
             <Icon type="api" />
-            <span> Bin Status</span>
+            <span>Bin Status</span>
             <Link to={ROUTES.BIN_STATUS}></Link>
           </Menu.Item>
           <Menu.Item key="3">
@@ -69,7 +69,7 @@ class Navigation extends React.Component {
           </Menu.Item>
           <Menu.Item key="4">
             <Icon type="picture" />
-            <span>Gallery</span>
+            <span>Bin Snapshots</span>
             <Link to={ROUTES.GALLERY}></Link>
           </Menu.Item>
         </Menu>
