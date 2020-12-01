@@ -69,7 +69,7 @@ class BinStatusPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Bin registration</h1>
+        <h1>Bin Registration</h1>
         <h2>Bin information</h2>
         <div id="registration-input__bintype-style">
           <Dropdown className="registration-input" overlay={this.menu}>

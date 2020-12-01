@@ -5,7 +5,7 @@ class BinStatusPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>BinStatusPage</h1>
+        <h1>Bin Status Page</h1>
         <Table />
       </div>
     )
