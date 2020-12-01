@@ -33,46 +33,80 @@ h3 {
   z-index: 2; }
 
 #app-router__nav-column {
-  width: 18%;
- }
+  width: 18%; }
 
 #app-router__dashboard-column {
-  float:right;
+  float: right;
   position: relative;
   width: 82%;
-  top: 60px; 
-}
+  top: 60px; }
 
-#app-router__dashboard-column-collapsed {
-  left: 100px;
+/* Card Visual Feature styling */
+#cardVisualFeature__card-column {
+  float: right; }
+
+#cardVisualFeature__uncollapsed-realtime-data {
+  color: black;
+  text-transform: uppercase;
+  padding-left: 20px; }
+
+#cardVisualFeature__collapsed-realtime-data {
+  color: black;
+  text-transform: uppercase; }
+
+#cardVisualFeature__column-time-day {
+  float: right; }
+
+#cardVisualFeature__text-time-day {
+  float: right;
+  color: gray; }
+
+#cardVisualFeature__card-collapsed-title-text {
+  color: gray;
+  font-size: 75%; }
+
+#cardVisualFeature__card-uncollapsed-title-text {
+  color: gray;
+  font-size: 90%; }
+
+#cardVisualFeature__card-weight-text {
+  color: #616161;
   float: left;
-  position: relative;
-  width: 82%;
-  top: 60px; 
-}
+  font-weight: bold; }
+
+#cardVisualFeature__card-percentage-text {
+  color: red;
+  float: left;
+  font-weight: bold;
+  font-variant: small-caps; }
+
+#cardVisualFeature__card-positive-percentage-text {
+  color: green;
+  float: left;
+  font-weight: bold;
+  font-variant: small-caps; }
+
+#cardVisualFeature__card-graph-img {
+  opacity: 0.75; }
 
 /* BinMap styling */
 #bin-map-card {
   filter: grayscale(1);
   margin: 1rem; }
 
+#bin-map-card-mainmap {
+  width: 100%; }
+
 /* BinTable styling */
 #bin-table-card {
   margin: 1rem; }
 
+#leaderboard-text {
+  font-weight: 300;
+  color: #43425d; }
+
 /* Dashboard Page styling */
 #dashboard-page {
-  display: flex;
-  flex-direction: column;
-  margin: 0px 3rem; }
-
-#dashboard-page-collapsed {
-  display: flex;
-  flex-direction: row;
-  margin: auto; }
-
-/* Gallery Page styling */
-#gallery-page {
   display: flex;
   flex-direction: column;
   margin: 0px 3rem; }
@@ -81,25 +115,52 @@ h3 {
 #doughnut-card {
   margin: 1rem; }
 
-/*cardVisualFeature styling*/
-#cardVisualFeature {
-  width: 97.5%;
-  margin: 1rem;
-}
+#doughtnut-text-style {
+  font-weight: 300;
+  color: #43425d;
+  margin-bottom: 1.5rem; }
 
 /* LineChart styling */
 #line-chart-card {
   margin: 1rem; }
 
+/* Progress Bar */
+#bin-progressbar-style {
+  color: #616161;
+  float: left;
+  fontWeight: light;
+  fontVariant: small-caps; }
+
+/* IntervalOption styling */
+#dropdown-button-overlay {
+  margin-top: 2rem; }
+
+#dropdown-button {
+  margin: 2rem 0 0 1rem; }
+
+#rangepicker-style {
+  margin-top: 2rem; }
+
+#rangepicker-button-style {
+  margin: 2rem 0 0 1rem; }
+
 /* Navigation styling */
 #navigation-div {
-  height: 100%; 
-}
+  height: 100%; }
 
 #navigation-menu {
   background-color: #4e4e4e;
-  height: 100vh; 
-}
+  height: 100vh; }
+
+/* Device Registration Page */
+#registration-input__bintype-style {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  margin: 12px; }
+
+#x-tooltip-style {
+  color: rgba(0, 0, 0, 0.45); }
 
 /* TopBar styling */
 #topbar-div {
@@ -114,27 +175,11 @@ h3 {
   display: flex;
   flex-direction: row;
   height: 60px;
-  min-width: 18%;
-}
-
-#topbar-div__zotbins-collapsed {
-  background-color: #454545;
-  display: flex;
-  flex-direction: row;
-  height: 60px;
-  min-width: 80px;
-}
+  min-width: 18%; }
 
 #topbar-div__zotbins-img {
   height: 35px;
-  margin: 0.5rem 0.5rem 1rem 1rem; 
-  position: relative;
-}
-
-#topbar-div__zotbins-img-collapsed{
-  height: 35px;
-  margin: auto; 
-}
+  margin: 0.5rem 0.5rem 1rem 1rem; }
 
 #topbar-div__zotbins > h3 {
   color: white !important;

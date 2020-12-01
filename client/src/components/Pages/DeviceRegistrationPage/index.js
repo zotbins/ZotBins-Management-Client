@@ -71,14 +71,7 @@ class BinStatusPage extends React.Component {
       <div>
         <h1>Bin registration</h1>
         <h2>Bin information</h2>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            width: '500px',
-            margin: '12px',
-          }}
-        >
+        <div id="registration-input__bintype-style">
           <Dropdown className="registration-input" overlay={this.menu}>
             <Button>
               {this.state.bin_type} <Icon type="down" />
@@ -91,7 +84,7 @@ class BinStatusPage extends React.Component {
             placeholder="Bin ID"
             suffix={
               <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
-                <Icon type="info-circle" style={{ color: 'rgba(0,0,0,.45)' }} />
+                <Icon type="info-circle" id="x-tooltip-style" />
               </Tooltip>
             }
           />
@@ -104,21 +97,14 @@ class BinStatusPage extends React.Component {
           />
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            width: '500px',
-            margin: '12px',
-          }}
-        >
+        <div id="registration-input__bintype-style">
           <Input className="registration-input" placeholder="Location Name" />
           <Input
             className="registration-input"
             placeholder="x"
             suffix={
               <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
-                <Icon type="info-circle" style={{ color: 'rgba(0,0,0,.45)' }} />
+                <Icon type="info-circle" id="x-tooltip-style" />
               </Tooltip>
             }
           />
@@ -127,7 +113,7 @@ class BinStatusPage extends React.Component {
             placeholder="y"
             suffix={
               <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
-                <Icon type="info-circle" style={{ color: 'rgba(0,0,0,.45)' }} />
+                <Icon type="info-circle" id="x-tooltip-style" />
               </Tooltip>
             }
           />
@@ -136,7 +122,7 @@ class BinStatusPage extends React.Component {
             placeholder="z"
             suffix={
               <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
-                <Icon type="info-circle" style={{ color: 'rgba(0,0,0,.45)' }} />
+                <Icon type="info-circle" id="x-tooltip-style" />
               </Tooltip>
             }
           />

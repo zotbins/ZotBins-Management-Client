@@ -65,8 +65,8 @@ class BinTable extends React.Component {
   render() {
     return (
       <div>
-        <Card style={{ margin: '1rem' }}>
-          <h3 style={{ fontWeight: 300, color: '#43425D' }}>Leaderboard</h3>
+        <Card id="bin-table-card">
+          <h3 id="leaderboard-text">Leaderboard</h3>
           <Table
             columns={columns}
             dataSource={data}
