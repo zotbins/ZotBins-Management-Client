@@ -4,17 +4,17 @@
   "private": true,
   "dependencies": {
     "@antv/g2plot": "^0.11.35",
-    "antd": "^3.24.3",
-    "chart.js": "^2.9.3",
-    "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "antd": "^3.26.20",
+    "chart.js": "^2.9.4",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
     "pigeon-maps": "^0.14.0",
-    "react": "^16.9.0",
-    "react-chartjs-2": "^2.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.14.0",
+    "react-chartjs-2": "^2.11.1",
+    "react-dom": "^16.14.0",
     "react-photo-gallery": "^8.0.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.1"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
