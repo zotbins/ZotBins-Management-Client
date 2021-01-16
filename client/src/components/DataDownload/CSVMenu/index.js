@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Divider, Col, Row, Select, Drawer, Card} from "antd";
 import IntervalOption from "../../IntervalOption"; 
+import csvPreview from "../../../images/csv_preview.png";
 
 const { Option } = Select;
 
@@ -15,7 +16,7 @@ class CSVMenu extends React.Component {
                 visible={this.props.visible}
                 title="Export to CSV"
                 onClose={this.props.handleCancel}
-                width="500px"
+                width="45%"
                 headerStyle={{backgroundColor: '#4E4E4E', WebkitTextFillColor:'white'}}
                 destroyOnClose={true}
             >
@@ -58,14 +59,23 @@ class CSVMenu extends React.Component {
                         </div>
                     </Row>
                 </div>
-                <br/>
-                <div style={{float: 'right', width:'75%', border: '0px solid green'}}>
-                    <Button key="submit" type="primary" onClick={this.props.handleOk} size="large" style={{width:'200px'}}>
-                        Download Report
-                    </Button>
-                </div>
-                <br/><br/>
                 </Card>
+
+                <Divider></Divider>
+
+                <div className="header">
+                    <Col span={12}>
+                    <h2 style={{color: 'black', fontSize:'x-large'}}>Report Preview</h2>
+                    </Col>
+                    <div style={{float:'right'}}>
+                        <Button key="submit" type="primary" size="large" onClick={this.props.handleOk}>
+                            Download Report
+                        </Button>
+                    </div>
+                </div>
+                <div className="content">
+                    <img style={{boxShadow: '0 0 11px rgba(0,0,0,0.15)', marginTop:'85px', marginLeft:'auto', marginRight:'auto', display:'block'}} src={csvPreview} width="75%" height="75%"></img>
+                </div>
             </Drawer>
         );
     }
