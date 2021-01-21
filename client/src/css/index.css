@@ -1,4 +1,3 @@
-/* Initialized Styling */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -11,7 +10,6 @@ code {
 .ant-input:focus {
   box-shadow: 0 0 0 0px rgba(24, 144, 255, 0.2) !important; }
 
-/* General Styling */
 h1 {
   color: #43425d !important;
   font-size: 40px !important;
@@ -23,7 +21,6 @@ h3 {
   font-weight: 300;
   margin: 0px 1rem; }
 
-/* App styling */
 #app-router__topbar-and-nav {
   display: flex;
   flex-direction: column;
@@ -41,55 +38,13 @@ h3 {
   width: 82%;
   top: 60px; }
 
-/* Card Visual Feature styling */
-#cardVisualFeature__card-column {
-  float: right; }
-
-#cardVisualFeature__uncollapsed-realtime-data {
-  color: black;
-  text-transform: uppercase;
-  padding-left: 20px; }
-
-#cardVisualFeature__collapsed-realtime-data {
-  color: black;
-  text-transform: uppercase; }
-
-#cardVisualFeature__column-time-day {
-  float: right; }
-
-#cardVisualFeature__text-time-day {
-  float: right;
-  color: gray; }
-
-#cardVisualFeature__card-collapsed-title-text {
-  color: gray;
-  font-size: 75%; }
-
-#cardVisualFeature__card-uncollapsed-title-text {
-  color: gray;
-  font-size: 90%; }
-
-#cardVisualFeature__card-weight-text {
-  color: #616161;
+#app-router__dashboard-column-collapsed {
+  left: 100px;
   float: left;
-  font-weight: bold; }
+  position: relative;
+  width: 82%;
+  top: 60px; }
 
-#cardVisualFeature__card-percentage-text {
-  color: red;
-  float: left;
-  font-weight: bold;
-  font-variant: small-caps; }
-
-#cardVisualFeature__card-positive-percentage-text {
-  color: green;
-  float: left;
-  font-weight: bold;
-  font-variant: small-caps; }
-
-#cardVisualFeature__card-graph-img {
-  opacity: 0.75; }
-
-/* BinMap styling */
 #bin-map-card {
   filter: grayscale(1);
   margin: 1rem; }
@@ -97,54 +52,34 @@ h3 {
 #bin-map-card-mainmap {
   width: 100%; }
 
-/* BinTable styling */
 #bin-table-card {
   margin: 1rem; }
 
-#leaderboard-text {
-  font-weight: 300;
-  color: #43425d; }
-
-/* Dashboard Page styling */
 #dashboard-page {
   display: flex;
   flex-direction: column;
   margin: 0px 3rem; }
 
-/* Doughtnut styling */
+#dashboard-page-collapsed {
+  display: flex;
+  flex-direction: row;
+  margin: auto; }
+
+#gallery-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 3rem; }
+
 #doughnut-card {
   margin: 1rem; }
 
-#doughtnut-text-style {
-  font-weight: 300;
-  color: #43425d;
-  margin-bottom: 1.5rem; }
+#cardVisualFeature {
+  width: 97.5%;
+  margin: 1rem; }
 
-/* LineChart styling */
 #line-chart-card {
   margin: 1rem; }
 
-/* Progress Bar */
-#bin-progressbar-style {
-  color: #616161;
-  float: left;
-  fontWeight: light;
-  fontVariant: small-caps; }
-
-/* IntervalOption styling */
-#dropdown-button-overlay {
-  margin-top: 2rem; }
-
-#dropdown-button {
-  margin: 2rem 0 0 1rem; }
-
-#rangepicker-style {
-  margin-top: 2rem; }
-
-#rangepicker-button-style {
-  margin: 2rem 0 0 1rem; }
-
-/* Navigation styling */
 #navigation-div {
   height: 100%; }
 
@@ -152,7 +87,6 @@ h3 {
   background-color: #4e4e4e;
   height: 100vh; }
 
-/* Device Registration Page */
 #registration-input__bintype-style {
   display: flex;
   flex-direction: row;
@@ -162,7 +96,6 @@ h3 {
 #x-tooltip-style {
   color: rgba(0, 0, 0, 0.45); }
 
-/* TopBar styling */
 #topbar-div {
   box-shadow: rgba(0, 0, 0, 0.05) 5px 5px 15px 5px;
   display: flex;
@@ -176,16 +109,27 @@ h3 {
   flex-direction: row;
   height: 60px;
   min-width: 18%; }
+  #topbar-div__zotbins > h3 {
+    color: white !important;
+    font-weight: 600 !important;
+    letter-spacing: 3px !important;
+    margin: 1rem 0px !important; }
+
+#topbar-div__zotbins-collapsed {
+  background-color: #454545;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  min-width: 80px; }
 
 #topbar-div__zotbins-img {
   height: 35px;
-  margin: 0.5rem 0.5rem 1rem 1rem; }
+  margin: 0.5rem 0.5rem 1rem 1rem;
+  position: relative; }
 
-#topbar-div__zotbins > h3 {
-  color: white !important;
-  font-weight: 600 !important;
-  letter-spacing: 3px !important;
-  margin: 1rem 0px !important; }
+#topbar-div__zotbins-img-collapsed {
+  height: 35px;
+  margin: auto; }
 
 #topbar-div__search-icon {
   align-items: center;
@@ -195,11 +139,10 @@ h3 {
 
 #topbar-div__search-bar {
   width: 100%; }
-
-#topbar-div__search-bar > input {
-  border: 0px none;
-  height: 100%;
-  width: 100%; }
+  #topbar-div__search-bar > input {
+    border: 0px none;
+    height: 100%;
+    width: 100%; }
 
 #topbar-div__info {
   background: white none repeat scroll 0% 0%;
