@@ -60,7 +60,7 @@ class DiversionChart extends React.Component {
           {
             label: 'Diversion Rate',
             data: [3, 47, 52, 34, 76, 53, 25, 85, 79, 91, 58, 83],
-            borderColor: 'rgba(53, 123, 35, 0.53)',
+            borderColor: 'rgba(213, 252, 112, 0.75)',
             fill: false,
             pointStyle: 'rectRounded',
             borderWidth: 6,
