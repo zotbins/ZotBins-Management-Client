@@ -24,9 +24,9 @@ class PDFMenu extends React.Component {
                     <div className="header">
                         <Row>
                             <Col span={12}>
-                                <h2 style={{color: 'black', fontSize:'x-large'}}>Historical Data</h2>
+                                <h2 id="csv-pdf-report-preview">Historical Data</h2>
                             </Col>
-                            <div style={{margin: "auto auto 1rem auto", float:'right'}}>
+                            <div id="pdf-select-date">
                                 <IntervalOption updateDates={this.props.handlePDFTimeChanges}/>
                             </div>
                         </Row>
@@ -63,7 +63,7 @@ class PDFMenu extends React.Component {
                 <br/>
 
                 <div className="header">
-                    <h2 style={{color: 'black', fontSize:'x-large'}}>Realtime Data</h2>
+                    <h2 id="csv-pdf-report-preview">Realtime Data</h2>
                 </div>
                 <div className="content">
                     <Checkbox.Group style={{width:'100%'}} defaultValue={defaultRealtimeOptions} onChange={this.props.handlePDFRealtimeSelections}>
@@ -80,16 +80,16 @@ class PDFMenu extends React.Component {
 
                 <div className="header">
                     <Col span={12}>
-                    <h2 style={{color: 'black', fontSize:'x-large'}}>Report Preview</h2>
+                    <h2 id="csv-pdf-report-preview">Report Preview</h2>
                     </Col>
-                    <div style={{float:'right'}}>
+                    <div id="csv-pdf-download-report-button">
                         <Button key="submit" type="primary" size="large" onClick={this.props.handleOk}>
                             Download Report
                         </Button>
                     </div>
                 </div>
                 <div className="content">
-                    <img style={{boxShadow: '0 0 11px rgba(0,0,0,0.15)', marginTop:'85px', marginLeft:'auto', marginRight:'auto', display:'block'}} src={pdfPreview} width="75%" height="75%"></img>
+                    <img id="csv-pdf-report-preview-image" src={pdfPreview} width="75%" height="75%"></img>
                 </div>
             </Drawer>
         );

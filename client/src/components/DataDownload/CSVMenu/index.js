@@ -24,10 +24,10 @@ class CSVMenu extends React.Component {
                 <div>
                     <Row>
                         <Col span={10}>
-                            <h2 style={{color: 'black', float:'right', marginRight:'1rem'}}>Data Type: </h2>
+                            <h2 id="csv-h2">Data Type: </h2>
                         </Col>
-                        <div style={{margin: "auto auto 1rem auto"}}>
-                            <Select defaultValue="WeightDistance" style={{ width: '40%' }}>
+                        <div id="csv-space">
+                            <Select defaultValue="WeightDistance" id="csv-selection-size">
                                 <Option value="WeightDistance">Weight Distance</Option>
                             </Select>
                         </div>
@@ -37,10 +37,10 @@ class CSVMenu extends React.Component {
                 <div>
                     <Row>
                         <Col span={10}>
-                            <h2 style={{color: 'black', float:'right', marginRight:'1rem'}}>Bin ID: </h2>
+                            <h2 id="csv-h2">Bin ID: </h2>
                         </Col>
-                        <div style={{margin: "auto auto 1rem auto"}}>
-                            <Select defaultValue="ZBin7" style={{ width: '40%' }} onChange={this.props.handleCSVBinIDChanges}>
+                        <div id="csv-space">
+                            <Select defaultValue="ZBin7" id="csv-selection-size" onChange={this.props.handleCSVBinIDChanges}>
                                 <Option value="ZBin1">ZBin1</Option>
                                 <Option value="ZBin4">ZBin4</Option>
                                 <Option value="ZBin7">ZBin7</Option>
@@ -52,9 +52,9 @@ class CSVMenu extends React.Component {
                 <div>
                     <Row>
                         <Col span={10}>
-                            <h2 style={{color: 'black', float:'right', marginRight:'1rem'}}>Time Range: </h2>
+                            <h2 id="csv-h2">Time Range: </h2>
                         </Col>
-                        <div style={{margin: "auto auto 1rem auto"}}>
+                        <div id="csv-space">
                             <IntervalOption updateDates={this.props.handleCSVTimeChanges}/>
                         </div>
                     </Row>
@@ -65,16 +65,16 @@ class CSVMenu extends React.Component {
 
                 <div className="header">
                     <Col span={12}>
-                    <h2 style={{color: 'black', fontSize:'x-large'}}>Report Preview</h2>
+                    <h2 id="csv-pdf-report-preview">Report Preview</h2>
                     </Col>
-                    <div style={{float:'right'}}>
+                    <div id="csv-pdf-download-report-button">
                         <Button key="submit" type="primary" size="large" onClick={this.props.handleOk}>
                             Download Report
                         </Button>
                     </div>
                 </div>
                 <div className="content">
-                    <img style={{boxShadow: '0 0 11px rgba(0,0,0,0.15)', marginTop:'85px', marginLeft:'auto', marginRight:'auto', display:'block'}} src={csvPreview} width="75%" height="75%"></img>
+                    <img id="csv-pdf-report-preview-image" src={csvPreview} width="75%" height="75%"></img>
                 </div>
             </Drawer>
         );

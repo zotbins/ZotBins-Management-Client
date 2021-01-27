@@ -82,9 +82,9 @@ class DashboardPage extends React.Component {
                 {!collapsedPage
                 ?<div>
                     <Row>
-                        <div id="select-date">
+                      <div id="select-date-container">
                             <h1>Overall Data</h1>
-                            <div style={{margin: "2rem auto auto 1rem"}}>
+                            <div id="select-date">
                                 <IntervalOption updateDates={this.handleTimeChanges}/>
                             </div>
                             <div id="export-button">
@@ -105,9 +105,9 @@ class DashboardPage extends React.Component {
                 </div>
                 :<div>
                     <Row>
-                      <div id="select-date">
+                      <div id="select-date-container">
                             <h1>Overall Data</h1>
-                            <div style={{margin: "2rem auto auto 1rem"}}>
+                            <div id="select-date">
                                 <IntervalOption updateDates={this.handleTimeChanges}/>
                             </div>
                             <div id="export-button">
