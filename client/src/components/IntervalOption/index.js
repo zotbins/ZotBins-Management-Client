@@ -88,38 +88,46 @@ class IntervalOption extends React.Component {
             title = "Last Hour"
         }
 
-        if (this.state.mode === "period") {
-            return (
-                <div>
-                    <Dropdown overlay={this.menu}>
-                        <Button id = "dropdown-button-overlay">
-                            {title} <Icon type="down" />
-                        </Button>
-                    </Dropdown>
 
-                    <Button id = "dropdown-button" onClick={this.handleModeChange} shape="circle" icon="calendar" />
-                </div>
-            )
-        }
-        else if (this.state.mode === "time") {
-            return (
-            <div>
-                    <RangePicker
-                        showTime={{ format: 'HH:mm' }}
-                        format="YYYY-MM-DD HH:mm"
-                        placeholder={['Start Time', 'End Time']}
-                        onChange={this.onChange}
-                        onOk={this.onOk}
-                        id = "rangepicker-style"
-                        />
+    if (this.state.mode === 'period') {
+      return (
+        <div>
+          <Dropdown overlay={this.menu}>
+            <Button id="dropdown-button-overlay">
+              {title} <Icon type="down" />
+            </Button>
+          </Dropdown>
 
-                <Button id = "rangepicker-button-style" onClick={this.handleModeChange} shape="circle" icon="calendar" />
-            </div>
+          <Button
+            id="dropdown-button"
+            onClick={this.handleModeChange}
+            shape="circle"
+            icon="calendar"
+          />
+        </div>
+      )
+    } else if (this.state.mode === 'time') {
+      return (
+        <div>
+          <RangePicker
+            showTime={{ format: 'HH:mm' }}
+            format="YYYY-MM-DD HH:mm"
+            placeholder={['Start Time', 'End Time']}
+            onChange={this.onChange}
+            onOk={this.onOk}
+            id="rangepicker-style"
+          />
 
-            
-            )
-        }
+          <Button
+            id="rangepicker-button-style"
+            onClick={this.handleModeChange}
+            shape="circle"
+            icon="calendar"
+          />
+        </div>
+      )
     }
+}
 }
 
 export default IntervalOption;

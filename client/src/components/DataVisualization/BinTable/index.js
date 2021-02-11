@@ -63,17 +63,21 @@ const columns = [
 
   
 class BinTable extends React.Component {
-
-    render() {
-        return (
-            <div>
-                <Card id = "bin-table-card">
-                <h3 id = "leaderboard-text">Leaderboard</h3>
-                <Table columns={columns} dataSource={data} onChange={onChange} size="small"/>
-                </Card>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <Card id="bin-table-card">
+          <h3 id="leaderboard-text">Leaderboard</h3>
+          <Table
+            columns={columns}
+            dataSource={data}
+            onChange={onChange}
+            size="small"
+          />
+        </Card>
+      </div>
+    )
+  }
 }
 
 export default BinTable;

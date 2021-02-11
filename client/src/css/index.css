@@ -39,74 +39,117 @@ h3 {
 }
 
 #app-router__nav-column {
-  width: 18%;
-}
+  width: 18%; }
 
 #app-router__dashboard-column {
   float: right;
   position: relative;
   width: 82%;
-  top: 60px;
+  top: 60px; }
+/*Bin status page styling */
+#BinStatusPage-binstatusBars-column{
+
+  padding-top: 35px;
+  padding-bottom: 0px;
+  padding-left: 35px;
+  padding-right: 36px;
+}
+
+#binStatusPage-card{
+  background-color: white !important;
+  position: relative;
+  font-weight: bold;
+  margin: 0px  !important;
+}
+
+#binStatusPage-percentage-display{
+  color: #949494;
+  display: inline;
+  float: right;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+#binStatusPage-binDetails-display{
+  display: inline;
+  float: center !important;
+  font-size: 12px;
+}
+
+#binStatusPage-progressBar{
+  display:grid;
+  width: 572px;
+  bottom: -0.5;
+  right: 0;
+  left: 0 !important;
+  position: absolute;
+}
+
+#binStatusPage-pB{
+  color:white;
+  position: absolute;
+}
+
+#binStatusPage-binDetails
+{
+  color: black;
+  font-weight: 400;
+}
+
+#binStatusPage-circularIcon
+{
+  margin-right: 20px;
+  font-size: 20px;
+ 
 }
 
 /* Card Visual Feature styling */
 #cardVisualFeature__card-column {
-  float: right;
-}
+  float: right; }
 
 #cardVisualFeature__uncollapsed-realtime-data {
   color: black;
   text-transform: uppercase;
-  padding-left: 20px;
-}
+  padding-left: 20px; }
 
 #cardVisualFeature__collapsed-realtime-data {
   color: black;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 #cardVisualFeature__column-time-day {
-  float: right;
-}
+  float: right; }
 
 #cardVisualFeature__text-time-day {
   float: right;
-  color: gray;
-}
+  color: gray; }
 
 #cardVisualFeature__card-collapsed-title-text {
   color: gray;
-  font-size: 75%;
-}
+  font-size: 75%; }
 
 #cardVisualFeature__card-uncollapsed-title-text {
   color: gray;
-  font-size: 90%;
-}
+  font-size: 90%; }
 
 #cardVisualFeature__card-weight-text {
   color: #616161;
   float: left;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 #cardVisualFeature__card-percentage-text {
   color: red;
   float: left;
   font-weight: bold;
-  font-variant: small-caps;
-}
+  font-variant: small-caps; }
 
 #cardVisualFeature__card-positive-percentage-text {
   color: green;
   float: left;
   font-weight: bold;
-  font-variant: small-caps;
-}
+  font-variant: small-caps; }
 
 #cardVisualFeature__card-graph-img {
-  opacity: 0.75;
-}
+  opacity: 0.75; }
 
 /* BinMap styling */
 #bin-map-card {
@@ -118,6 +161,9 @@ h3 {
   width: 100%;
 }
 
+#bin-map-card-mainmap {
+  width: 100%; }
+
 /* BinTable styling */
 #bin-table-card {
   margin: 1rem;
@@ -128,17 +174,24 @@ h3 {
   color: #43425d;
 }
 
+#leaderboard-text {
+  font-weight: 300;
+  color: #43425d; }
+
 /* Dashboard Page styling */
 #dashboard-page {
   display: flex;
   flex-direction: column;
-  margin: 0px 3rem;
-}
+  margin: 0px 3rem; }
 
 /* Doughtnut styling */
 #doughnut-card {
-  margin: 1rem;
-}
+  margin: 1rem; }
+
+#doughtnut-text-style {
+  font-weight: 300;
+  color: #43425d;
+  margin-bottom: 1.5rem; }
 
 #doughtnut-text-style {
   font-weight: 300;
@@ -155,8 +208,8 @@ h3 {
 #bin-progressbar-style {
   color: #616161;
   float: left;
-  fontWeight: light;
-  fontVariant: small-caps;
+  font-weight: light;
+  font-variant: small-caps;
 }
 
 /* IntervalOption styling */
@@ -176,27 +229,43 @@ h3 {
   margin: 2rem 0 0 1rem;
 }
 
+/* Progress Bar */
+#bin-progressbar-style {
+  color: #616161;
+  float: left;
+  font-weight: light;
+  font-variant: small-caps; }
+
+/* IntervalOption styling */
+#dropdown-button-overlay {
+  margin-top: 2rem; }
+
+#dropdown-button {
+  margin: 2rem 0 0 1rem; }
+
+#rangepicker-style {
+  margin-top: 2rem; }
+
+#rangepicker-button-style {
+  margin: 2rem 0 0 1rem; }
+
 /* Navigation styling */
 #navigation-div {
-  height: 100%;
-}
+  height: 100%; }
 
 #navigation-menu {
   background-color: #4e4e4e;
-  height: 100vh;
-}
+  height: 100vh; }
 
 /* Device Registration Page */
 #registration-input__bintype-style {
   display: flex;
   flex-direction: row;
   width: 500px;
-  margin: 12px;
-}
+  margin: 12px; }
 
 #x-tooltip-style {
-  color: rgba(0, 0, 0, 0.45);
-}
+  color: rgba(0, 0, 0, 0.45); }
 
 /* TopBar styling */
 #topbar-div {
@@ -212,13 +281,11 @@ h3 {
   display: flex;
   flex-direction: row;
   height: 60px;
-  min-width: 18%;
-}
+  min-width: 18%; }
 
 #topbar-div__zotbins-img {
   height: 35px;
-  margin: 0.5rem 0.5rem 1rem 1rem;
-}
+  margin: 0.5rem 0.5rem 1rem 1rem; }
 
 #topbar-div__zotbins > h3 {
   color: white !important;

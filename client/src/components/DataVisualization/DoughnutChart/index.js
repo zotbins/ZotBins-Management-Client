@@ -32,6 +32,7 @@ class DoughnutGraph extends React.Component {
     // if (this.state.data_loaded) {
       // this.getData();
 
+<<<<<<< HEAD
       return (
         <div>
           <Card id="doughtnut-card">
@@ -50,6 +51,32 @@ class DoughnutGraph extends React.Component {
                   hoverBackgroundColor: ['rgba(213, 252, 112)', 'rgba(121, 214, 251)', 'rgba(254, 247, 113)']
                 }
               ]
+=======
+    return (
+      <div>
+        <Card id="doughtnut-card">
+          {/* <div id={"container"}></div> */}
+          <h3 id="doughtnut-text-style">Disposable Count</h3>
+          <Doughnut
+            height={300}
+            data={{
+              labels: ['Recycle', 'Landfill', 'Compost'],
+              datasets: [
+                {
+                  data: this.state.data,
+                  backgroundColor: [
+                    'rgba(213, 252, 112)',
+                    'rgba(121, 214, 251)',
+                    'rgba(254, 247, 113)',
+                  ],
+                  hoverBackgroundColor: [
+                    'rgba(213, 252, 112)',
+                    'rgba(121, 214, 251)',
+                    'rgba(254, 247, 113)',
+                  ],
+                },
+              ],
+>>>>>>> 9fd2d59cb66c5602e8f58afee664e366bf0e5f93
             }}
           />
 

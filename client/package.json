@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.5.0",
     "@antv/g2plot": "^0.11.35",
     "antd": "^3.24.3",
     "chart.js": "^2.9.3",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "pigeon-maps": "^0.14.0",
     "react": "^16.9.0",
     "react-chartjs-2": "^2.9.0",
