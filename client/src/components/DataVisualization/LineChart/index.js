@@ -1,5 +1,4 @@
 import React from 'react'
-import { StackArea } from '@antv/g2plot'
 import Chart from 'chart.js'
 
 class LineChart extends React.Component {
