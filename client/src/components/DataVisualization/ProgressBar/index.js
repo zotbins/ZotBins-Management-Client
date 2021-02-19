@@ -1,10 +1,11 @@
-import React from 'react'
-import { Progress, Col, Row } from 'antd'
+import React from 'react';
+import { Progress, Col, Row } from 'antd';
+
 
 class ProgressBar extends React.Component {
-  state = {
-    percent: 20,
-  }
+    state ={
+        percent: 20,
+    };
 
   render() {
     return (
@@ -56,4 +57,4 @@ class ProgressBar extends React.Component {
   }
 }
 
-export default ProgressBar
+export default ProgressBar;

@@ -1,6 +1,7 @@
-import React from 'react'
-import { Card } from 'antd'
-import Map from 'pigeon-maps'
+import React from 'react';
+import { Card } from 'antd';
+import Map from 'pigeon-maps';
+
 
 class BinMap extends React.Component {
   render() {
@@ -17,4 +18,4 @@ class BinMap extends React.Component {
   }
 }
 
-export default BinMap
+export default BinMap;

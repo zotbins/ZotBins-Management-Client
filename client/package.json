@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.5.0",
     "@antv/g2plot": "^0.11.35",
     "antd": "^3.24.3",
     "chart.js": "^2.9.3",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "pigeon-maps": "^0.14.0",
     "react": "^16.9.0",
     "react-chartjs-2": "^2.9.0",
@@ -16,32 +17,15 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1"
   },
-  "devDependencies": {
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "node-sass --watch src/sass -o src/css",
-    "prettier": "prettier --write \"**/*.js\"",
-    "pre-commit": "lint-staged"
+    "sass": "node-sass --watch src/sass -o src/css"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write \"**/*.js\""
-    ]
   },
   "browserslist": {
     "production": [

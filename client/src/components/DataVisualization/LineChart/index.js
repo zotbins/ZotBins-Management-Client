@@ -1,9 +1,11 @@
-import React from 'react'
-import { StackArea } from '@antv/g2plot'
-import Chart from 'chart.js'
+import React from 'react';
+import { StackArea } from '@antv/g2plot';
+import Chart from "chart.js";
 
 class LineChart extends React.Component {
-  chartRef = React.createRef()
+    chartRef = React.createRef();
+    
+
 
   // TODO: Implement ZotBins Line Chart, edit code below - These are example data
   componentDidMount() {
@@ -43,4 +45,4 @@ class LineChart extends React.Component {
   }
 }
 
-export default LineChart
+export default LineChart;

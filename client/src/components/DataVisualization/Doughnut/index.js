@@ -1,9 +1,11 @@
-import React from 'react'
-import Chart from 'chart.js'
-import { Card } from 'antd'
+import React from 'react';
+import Chart from "chart.js";
+import { Card } from 'antd';
 
 class Doughnut extends React.Component {
-  chartRef = React.createRef()
+    chartRef = React.createRef();
+    
+    // TODO: Implement ZotBins Line Chart, edit code below - These are example data
 
   // TODO: Implement ZotBins Line Chart, edit code below - These are example data
   componentDidMount() {
@@ -38,6 +40,7 @@ class Doughnut extends React.Component {
       },
     })
   }
+
   render() {
     return (
       <div>
@@ -50,4 +53,4 @@ class Doughnut extends React.Component {
   }
 }
 
-export default Doughnut
+export default Doughnut;

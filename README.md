@@ -14,10 +14,10 @@ This project is a web app intended to be a tool for management (organizations th
   
 ### Client-side
 2. Open a terminal in `client/` and install dependencies with `npm install` or `yarn install`  
-3. Run the webapp with `npm start` or `yarn start`.
+3. Run the webapp with `npm start` or `yarn start`  
 The web app will be running on `http://localhost:3000/` and will detect changes in source code.
 
 ### Server-side
 2. Open a terminal in `server/` and install dependencies with `npm install` or `yarn install`  
-3. Run the webapp with `nodemon` or `npx nodemon`.
+3. Run the webapp with `nodemon`  
 The web app will be running on `http://localhost:9000/` and will detect changes in source code.
