@@ -8,6 +8,7 @@ class BinStatusPage extends React.Component {
     return (
       <div>
         <h1>Bin Status Page</h1>
+<<<<<<< HEAD
         <BinStatusBar 
           binName = "Bin 0001" 
           binLocation = "Donald Bren Hall, Floor 1" 
@@ -82,6 +83,9 @@ class BinStatusPage extends React.Component {
         
 
 
+=======
+        <Table />
+>>>>>>> 3e427bf4e88bafe6b9484b4328eafd8f9d8771b3
       </div>
     )
   }
