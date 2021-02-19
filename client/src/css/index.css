@@ -67,7 +67,7 @@ h3 {
   display: inline;
   float: right;
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 #binStatusPage-binDetails-display{
