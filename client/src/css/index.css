@@ -90,6 +90,9 @@ h3 {
   margin: auto auto 1rem auto;
   float: right; }
 
+#pdf-enter-name-button {
+  margin-left: 1rem; }
+
 #csv-pdf-download-report-button {
   float: right; }
 

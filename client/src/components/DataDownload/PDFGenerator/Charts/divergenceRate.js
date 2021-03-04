@@ -13,6 +13,18 @@ class DivergenceRate extends React.Component {
     }
   }
 
+  async getCountData(sensorID) {
+    //start_time and end_time are from props => TODO: finish getting mock data from API once the APIs are made
+    //'https://zotbins.pythonanywhere.com/mocked/observation/get?sensor_id=' + sensorID + '&start_timestamp=' + this.props.start_timestamp + '&end_timestamp=' + this.props.end_timestamp
+    fetch(
+        "https://zotbins.pythonanywhere.com/mocked/observation/get?sensor_id=ZBin3Di&start_timestamp=2021-02-26 15:15:01&end_timestamp=2021-02-26 16:15:01",
+      { method: 'GET' }
+    )
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch(error => console.log(error))
+  }
+
   styles = StyleSheet.create({
     chart: {
       marginTop: 15,
@@ -23,6 +35,9 @@ class DivergenceRate extends React.Component {
   })
 
   componentDidMount() {
+    var sensorID = 'ZBin3Di';
+    this.getCountData(sensorID, this.props.start_timestamp, this.props.end_timestamp);
+
     this.state.myChart.setConfig({
       type: 'line',
       data: {

@@ -17,7 +17,7 @@ class IntervalOption extends React.Component {
         this.handleModeChange = this.handleModeChange.bind(this);
         this.onOk = this.onOk.bind(this);
         this.onChange = this.onChange.bind(this);
-        
+        this.disabledDate = this.disabledDate.bind(this);
 
         this.menu = (
             <Menu onClick={this.handleMenuClick}>
@@ -40,16 +40,16 @@ class IntervalOption extends React.Component {
     handleMenuClick(e) {
         this.setState({interval: e.key});
         if (e.key == 1) {
-            this.props.updateDates([new Date(Date.now() - 15552000000 - 28800000).toISOString(), new Date().toISOString()])
+            this.props.updateDates([new Date(Date.now() - 15552000000 - 28800000).toISOString(), new Date(Date.now() - 28800000).toISOString()])
         }
         if (e.key == 2) {
-            this.props.updateDates([new Date(Date.now() - 2592000000 - 28800000).toISOString(), new Date().toISOString()])
+            this.props.updateDates([new Date(Date.now() - 2592000000 - 28800000).toISOString(), new Date(Date.now() - 28800000).toISOString()])
         }
         if (e.key == 3) {
-            this.props.updateDates([new Date(Date.now() - 604800000 - 28800000).toISOString(), new Date().toISOString()])
+            this.props.updateDates([new Date(Date.now() - 604800000  - 28800000).toISOString(), new Date(Date.now() - 28800000).toISOString()])
         }
         if (e.key == 4) {
-            this.props.updateDates([new Date(Date.now() - 3600000 - 28800000).toISOString(), new Date().toISOString()])
+            this.props.updateDates([new Date(Date.now() - 3600000 - 28800000).toISOString(), new Date(Date.now() - 28800000).toISOString()])
         }
     }
 
@@ -70,8 +70,12 @@ class IntervalOption extends React.Component {
       
     onOk(value) {
         console.log('onOk: ', value);
-        this.props.updateDates([new Date(value[0]._d).toISOString(), new Date(value[1]._d).toISOString()])
+        this.props.updateDates([new Date(value[0]._d - 28800000).toISOString(), new Date(value[1]._d - 28800000).toISOString()])
       }
+
+    disabledDate(current){
+        return current && current.valueOf() > Date.now();
+    }
 
     render() { 
         var title = null;
@@ -110,6 +114,7 @@ class IntervalOption extends React.Component {
                         placeholder={['Start Time', 'End Time']}
                         onChange={this.onChange}
                         onOk={this.onOk}
+                        disabledDate={this.disabledDate}
                         />
 
                 <Button style={{margin: "0 0 0 1rem"}} onClick={this.handleModeChange} shape="circle" icon="calendar" />
