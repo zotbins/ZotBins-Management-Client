@@ -65,6 +65,48 @@ h3 {
   flex-direction: row;
   margin: auto; }
 
+#export-button {
+  display: flex;
+  margin: 2.5rem 1rem auto auto; }
+
+#select-date-container {
+  display: flex; }
+
+#select-date {
+  margin: 3rem auto auto 1rem; }
+
+#csv-h2 {
+  color: black;
+  float: right;
+  margin-right: 1rem; }
+
+#csv-space {
+  margin: auto auto 1rem auto; }
+
+#csv-selection-size {
+  width: 40%; }
+
+#pdf-select-date {
+  margin: auto auto 1rem auto;
+  float: right; }
+
+#pdf-enter-name-button {
+  margin-left: 1rem; }
+
+#csv-pdf-download-report-button {
+  float: right; }
+
+#csv-pdf-report-preview-image {
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.15);
+  margin-top: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+#csv-pdf-report-preview {
+  color: black;
+  font-size: x-large; }
+
 #gallery-page {
   display: flex;
   flex-direction: column;

@@ -5,7 +5,8 @@ import ChartTabs from '../../DataVisualization/ChartTabs'
 import Doughnut from '../../DataVisualization/Doughnut'
 import BinMap from '../../DataVisualization/BinMap'
 import CardVisualFeature from '../../CardVisualFeature'
-// TODO: import tippersRequest.js functions here, to pass to components
+import IntervalOption from '../../IntervalOption'
+import DataDownload from '../../DataDownload'
 
 class DashboardPage extends React.Component {
   constructor(props) {
@@ -14,10 +15,56 @@ class DashboardPage extends React.Component {
     this.state = {
       windowWidth: 0,
       windowHeight: 0,
+      time: [
+        new Date(Date.now() - 3600000 - 28800000).toISOString(),
+        new Date(Date.now() - 28800000).toISOString(),
+      ],
+      usage_count: [0, 0, 0],
     }
+
+    this.handleTimeChanges = this.handleTimeChanges.bind(this)
+    this.getCSV = this.getCSV.bind(this)
+  }
+
+  handleTimeChanges(i) {
+    this.setState({ time: i })
+    this.getCountData(i)
+    console.log(i)
+  }
+
+  async getCountData(time) {
+    fetch(
+      'http://localhost:9000/bin_breakbeam_count/' + time[0] + '/' + time[1],
+      { method: 'GET' }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          usage_count: [res.recycle, res.landfill, res.compost],
+        })
+      })
+  }
+
+  getCSV(csvTime, binID) {
+    let a = document.createElement('a')
+    a.href =
+      'http://localhost:9000/csv/' +
+      binID +
+      '/' +
+      csvTime[0].substring(0, 10) +
+      '(' +
+      csvTime[0].substring(11, 19) +
+      ')/' +
+      csvTime[1].substring(0, 10) +
+      '(' +
+      csvTime[1].substring(11, 19) +
+      ')'
+    a.download = 'data.csv'
+    a.click()
   }
 
   componentDidMount() {
+    this.getCountData(this.state.time)
     this.updateDimensions()
     window.addEventListener('resize', this.updateDimensions.bind(this))
   }
@@ -32,6 +79,7 @@ class DashboardPage extends React.Component {
 
     this.setState({ windowWidth, windowHeight })
   }
+
   render() {
     const { windowWidth } = this.state
     const collapsedPage = windowWidth < 1200
@@ -43,9 +91,15 @@ class DashboardPage extends React.Component {
         {!collapsedPage ? (
           <div>
             <Row>
-              <Col>
+              <div id="select-date-container">
                 <h1>Overall Data</h1>
-              </Col>
+                <div id="select-date">
+                  <IntervalOption updateDates={this.handleTimeChanges} />
+                </div>
+                <div id="export-button">
+                  <DataDownload getCSV={this.getCSV} />
+                </div>
+              </div>
             </Row>
             <Row gutter={32}>
               <Col span={17}>
@@ -61,9 +115,15 @@ class DashboardPage extends React.Component {
         ) : (
           <div>
             <Row>
-              <Col>
+              <div id="select-date-container">
                 <h1>Overall Data</h1>
-              </Col>
+                <div id="select-date">
+                  <IntervalOption updateDates={this.handleTimeChanges} />
+                </div>
+                <div id="export-button">
+                  <DataDownload getCSV={this.getCSV} />
+                </div>
+              </div>
             </Row>
             <Row>
               <ChartTabs />
@@ -105,84 +165,3 @@ class DashboardPage extends React.Component {
 }
 
 export default DashboardPage
-
-/*import IntervalOption from "../../IntervalOption";
-// TODO: import tippersRequest.js functions here, to pass to components
-
-class DashboardPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      time: [new Date(Date.now() - 3600000 - 28800000).toISOString(), new Date(Date.now() - 28800000).toISOString()],
-      usage_count: [0,0,0]
-    }
-
-    this.handleTimeChanges = this.handleTimeChanges.bind(this);
-  }
-
-  handleTimeChanges(i) {
-    this.setState({time: i});
-    this.getCountData(i);
-    console.log(i);
-  }
-
-  async getCountData(time) {
-    fetch(
-      "http://localhost:9000/bin_breakbeam_count/" + time[0] + "/" + time[1],
-      { method: "GET" }
-    )
-      .then(res => res.json())
-      .then(res =>
-       {
-        this.setState({
-          usage_count: [res.recycle, res.landfill, res.compost]
-        });
-       }
-      );
-  }
-
-  componentDidMount() {
-    this.getCountData(this.state.time);
-
-  }
-
-  render() {
-    return (
-      <div
-        style={{ display: "flex", flexDirection: "column", margin: "0 1rem" }}
-      >
-        <Row>
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <h1
-              style={{
-                margin: "1rem 2rem 0 2rem",
-                fontSize: "40px",
-                fontWeight: "300",
-                color: "#616161"
-              }}
-            >
-              Overall Data
-            </h1>
-
-            <IntervalOption updateDates={this.handleTimeChanges}/>
-          </div>
-        </Row>
-
-        <Row>
-          <Col l={10} xl={16}>
-            <ChartTabs />
-            <Table />
-          </Col>
-
-          <Col l={10} xl={8}>
-            <DoughnutChart data={this.state.usage_count} />
-            <BinMap />
-          </Col>
-        </Row>
-      </div>
-    );
-  }
-}
-
-export default DashboardPage;*/

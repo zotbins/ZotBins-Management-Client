@@ -55,7 +55,7 @@ router.get('/bin_breakbeam_count/:startTimestamp/:endTimestamp', async function(
 
 router.get('/weight/:startTimestamp/:endTimestamp', async function(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-  var LandfillBins = ['ZBin2B'];
+  /*var LandfillBins = ['ZBin2B'];
   var RecycleBins = ['ZBin4B'];
   var CompostBins = ['ZBin3B'];
   var startTimestamp = req.params.startTimestamp; //2020-02-01+00%3A00%3A00
@@ -63,7 +63,21 @@ router.get('/weight/:startTimestamp/:endTimestamp', async function(req, res, nex
   var count_result = {recycle: 0, landfill: 0, compost: 0};
 
   getBinBreakbeamCount(LandfillBins, RecycleBins, CompostBins, startTimestamp, endTimestamp).then(result => res.send(result)).catch(error => console.log(error));
+  */
+});
 
+router.get('/csv/:id/:startTimestamp/:endTimestamp', async function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Content-Disposition", "attachment;filename=data_" + req.params.id + " " + req.params.startTimestamp + " " + req.params.endTimestamp +  ".csv");
+
+  fetch("https://zotbins.pythonanywhere.com/observation/stats?sensor_id=" + req.params.id + 
+    "&start_timestamp=" + req.params.startTimestamp + "&end_timestamp=" + req.params.endTimestamp, {
+      method: 'GET',
+    })
+    .then((response) => response.text())
+    .then(body => res.send(body))  
+    .catch(error => console.log(error));
+  
 });
 
 router.get('/image-list', async function(req, res, next) {
