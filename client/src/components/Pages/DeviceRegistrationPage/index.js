@@ -8,23 +8,27 @@ import {
   Dropdown,
   Tooltip,
   Icon,
+  Row,
+  Col,
+  Card,
 } from 'antd'
 
-class BinStatusPage extends React.Component {
+class BinRegistrationPage extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
       checkedValues: [],
       bin_type: 'Bin Type',
-      bin_id: '',
-      bin_name: 'Bin Name',
+      bin_id: 'Bin ID',
+      bin_name: '',
+      location_name: '',
+      latitude: '',
+      longitude: '',
     }
-    this.menu = this.menu.bind(this)
-    this.handleMenuClick = this.handleMenuClick.bind(this)
   }
 
-  menu() {
+  menu = () => {
     return (
       <Menu onClick={this.handleMenuClick}>
         <Menu.Item key="1">
@@ -43,102 +47,193 @@ class BinStatusPage extends React.Component {
     )
   }
 
-  async handleMenuClick(e) {
+  handleMenuClick = (e) => {
     if (e.key == 1) {
-      this.setState({ bin_type: 'Recycle' }, this.generateBinName())
+      this.setState({ bin_type: 'Recycle' }, this.generateBinID)
     } else if (e.key == 2) {
-      this.setState({ bin_type: 'Landfill' }, this.generateBinName())
+      this.setState({ bin_type: 'Landfill' }, this.generateBinID)
     } else if (e.key == 3) {
-      this.setState({ bin_type: 'Compost' }, this.generateBinName())
+      this.setState({ bin_type: 'Compost' }, this.generateBinID)
     }
-    await this.generateBinName()
   }
 
-  async handleIDChange(e) {
-    this.setState({ bin_id: e.target.value }, this.generateBinName())
+  handleNameChange = (e) => {
+    this.setState({ bin_name: e.target.value }, this.generateBinID)
   }
 
-  generateBinName() {
-    if (this.state.bin_type != 'Bin Type' && this.state.bin_id != '') {
-      this.setState({ bin_name: this.state.bin_type[0] + this.state.bin_id })
+  handleLocationNameChange = (e) => {
+    this.setState({ location_name: e.target.value })
+  }
+
+  handleLatitudeChange = (e) => {
+    this.setState({ latitude: e.target.value })
+  }
+
+  handleLongitudeChange = (e) => {
+    this.setState({ longitude: e.target.value })
+  }
+
+  handleSubmit = (e) => {
+    console.log(this.state)
+  }
+
+  generateBinID() {
+    if (this.state.bin_type != 'Bin Type') {
+      this.setState({
+        bin_id: this.state.bin_type[0] + '-' + this.state.bin_name,
+      })
     } else {
-      this.setState({ bin_name: 'Bin Name' })
+      this.setState({ bin_id: 'Bin ID' })
     }
   }
 
   render() {
     return (
       <div>
-        <h1>Bin Registration</h1>
-        <h2>Bin information</h2>
-        <div id="registration-input__bintype-style">
-          <Dropdown className="registration-input" overlay={this.menu}>
-            <Button>
-              {this.state.bin_type} <Icon type="down" />
-            </Button>
-          </Dropdown>
+        <Row id="bin-registration-header">
+          {/* <Col> */}
+          <h1>Bin Registration</h1>
+          {/* </Col> */}
+        </Row>
 
-          <Input
-            className="registration-input"
-            onChange={(e) => this.handleIDChange(e)}
-            placeholder="Bin ID"
-            suffix={
-              <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
-                <Icon type="info-circle" id="x-tooltip-style" />
-              </Tooltip>
-            }
-          />
+        <div id="bin-registration-page">
+          <Card>
+            <Row>
+              <Col>
+                <Row gutter={[16, 48]}>
+                  <Col>
+                    <Row>
+                      <h2>Bin Information</h2>
+                    </Row>
+                    <Row>
+                      <Col span={2}>
+                        <Dropdown
+                          // className="registration-input"
+                          overlay={this.menu}
+                        >
+                          <Button>
+                            {this.state.bin_type} <Icon type="down" />
+                          </Button>
+                        </Dropdown>
+                      </Col>
 
-          <Input
-            className="registration-input"
-            placeholder="Bin Name"
-            value={this.state.bin_name}
-            disabled
-          />
+                      <Col span={4}>
+                        <Input
+                          // className="registration-input"
+                          onChange={this.handleNameChange}
+                          placeholder="Bin Name"
+                          suffix={
+                            <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
+                              <Icon type="info-circle" id="x-tooltip-style" />
+                            </Tooltip>
+                          }
+                        />
+                      </Col>
+                      <Col span={4}>
+                        <Input
+                          // className="registration-input"
+                          placeholder="Bin ID"
+                          value={this.state.bin_id}
+                          disabled
+                        />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+
+                <Row gutter={[16, 48]}>
+                  <Col>
+                    <Row>
+                      <h2>Location Information</h2>
+                    </Row>
+
+                    <Row>
+                      <Col span={4}>
+                        <Input
+                          className="registration-input"
+                          placeholder="Location Name"
+                          onChange={this.handleLocationNameChange}
+                        />
+                      </Col>
+
+                      <Col span={4}>
+                        <Input
+                          className="registration-input"
+                          placeholder="Latitude"
+                          onChange={this.handleLatitudeChange}
+                          suffix={
+                            <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
+                              <Icon type="info-circle" id="x-tooltip-style" />
+                            </Tooltip>
+                          }
+                        />
+                      </Col>
+
+                      <Col span={4}>
+                        <Input
+                          className="registration-input"
+                          placeholder="Longitude"
+                          onChange={this.handleLongitudeChange}
+                          suffix={
+                            <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
+                              <Icon type="info-circle" id="x-tooltip-style" />
+                            </Tooltip>
+                          }
+                        />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+
+                <Row gutter={[24, 48]}>
+                  <Col span={8}>
+                    <h2>Sensors</h2>
+                    <Row>
+                      {/* <Button
+                    type="primary"
+                    shape="round"
+                    icon= "upload"
+                    size={'small'}
+                  >
+                    Config File
+                  </Button> */}
+                      <Checkbox>Weight</Checkbox>
+                    </Row>
+
+                    <Row>
+                      {/* <Button
+                    type="primary"
+                    shape="round"
+                    icon= "upload"
+                    size={'small'}
+                  >
+                    Config File
+                  </Button> */}
+                      <Checkbox>Distance</Checkbox>
+                    </Row>
+
+                    {/* <Checkbox>Distance</Checkbox> */}
+                  </Col>
+                  {/* <Col>
+                <h2>Verify weight sensors configuration</h2>
+                <h2>Verify distance sensors configuration</h2>
+              </Col> */}
+                </Row>
+
+                <Row>
+                  <Col>
+                    <Button onClick={this.handleSubmit} type="primary">
+                      Register New Bin
+                    </Button>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Card>
         </div>
-
-        <div id="registration-input__bintype-style">
-          <Input className="registration-input" placeholder="Location Name" />
-          <Input
-            className="registration-input"
-            placeholder="x"
-            suffix={
-              <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
-                <Icon type="info-circle" id="x-tooltip-style" />
-              </Tooltip>
-            }
-          />
-          <Input
-            className="registration-input"
-            placeholder="y"
-            suffix={
-              <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
-                <Icon type="info-circle" id="x-tooltip-style" />
-              </Tooltip>
-            }
-          />
-          <Input
-            className="registration-input"
-            placeholder="z"
-            suffix={
-              <Tooltip title="You can use ZBin1 through ZBin36, but don’t use a ZBin thats already being used.">
-                <Icon type="info-circle" id="x-tooltip-style" />
-              </Tooltip>
-            }
-          />
-        </div>
-        <h2>Select your bin sensors</h2>
-        <Button type="primary" shape="round" icon="download" size={'large'}>
-          Weight
-        </Button>
-        <Button type="primary" shape="round" icon="download" size={'large'}>
-          Distance
-        </Button>
-        <h2>Verify weight sensors configuration</h2>
-        <h2>Verify distance sensors configuration</h2>
       </div>
     )
   }
 }
 
-export default BinStatusPage
+export default BinRegistrationPage
