@@ -189,35 +189,13 @@ class BinRegistrationPage extends React.Component {
                   <Col span={8}>
                     <h2>Sensors</h2>
                     <Row>
-                      {/* <Button
-                    type="primary"
-                    shape="round"
-                    icon= "upload"
-                    size={'small'}
-                  >
-                    Config File
-                  </Button> */}
                       <Checkbox>Weight</Checkbox>
                     </Row>
 
                     <Row>
-                      {/* <Button
-                    type="primary"
-                    shape="round"
-                    icon= "upload"
-                    size={'small'}
-                  >
-                    Config File
-                  </Button> */}
                       <Checkbox>Distance</Checkbox>
                     </Row>
-
-                    {/* <Checkbox>Distance</Checkbox> */}
                   </Col>
-                  {/* <Col>
-                <h2>Verify weight sensors configuration</h2>
-                <h2>Verify distance sensors configuration</h2>
-              </Col> */}
                 </Row>
 
                 <Row>
