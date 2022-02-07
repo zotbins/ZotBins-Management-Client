@@ -77,12 +77,18 @@ const styles = StyleSheet.create({
 
 class GeneratePDF extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
-    var start_timestamp = this.props.time[0].substring(0, 10) + ' ' + this.props.time[0].substring(11, 19);
-    var end_timestamp = this.props.time[1].substring(0, 10) + ' ' + this.props.time[1].substring(11, 19);
+    var start_timestamp =
+      this.props.time[0].substring(0, 10) +
+      ' ' +
+      this.props.time[0].substring(11, 19)
+    var end_timestamp =
+      this.props.time[1].substring(0, 10) +
+      ' ' +
+      this.props.time[1].substring(11, 19)
     return (
       <Document>
         <Page size="A4" style={styles.page}>
@@ -123,7 +129,10 @@ class GeneratePDF extends React.Component {
                   Average Disposal Combined
                 </Text>
               </View>
-              <DisposalCombined start_timestamp={start_timestamp} end_timestamp={end_timestamp}/>
+              <DisposalCombined
+                start_timestamp={start_timestamp}
+                end_timestamp={end_timestamp}
+              />
             </View>
           ) : (
             <></>
@@ -134,7 +143,10 @@ class GeneratePDF extends React.Component {
               <View style={styles.optionrow}>
                 <Text style={styles.optiontitle}>Average Disposal By Type</Text>
               </View>
-              <DisposalByType start_timestamp={start_timestamp} end_timestamp={end_timestamp}/>
+              <DisposalByType
+                start_timestamp={start_timestamp}
+                end_timestamp={end_timestamp}
+              />
             </View>
           ) : (
             <></>
@@ -145,7 +157,10 @@ class GeneratePDF extends React.Component {
               <View style={styles.optionrow}>
                 <Text style={styles.optiontitle}>Disposal Percentage</Text>
               </View>
-              <DisposalPercentage start_timestamp={start_timestamp} end_timestamp={end_timestamp}/>
+              <DisposalPercentage
+                start_timestamp={start_timestamp}
+                end_timestamp={end_timestamp}
+              />
             </View>
           ) : (
             <></>
@@ -156,7 +171,10 @@ class GeneratePDF extends React.Component {
               <View style={styles.optionrow}>
                 <Text style={styles.optiontitle}>Total Disposal</Text>
               </View>
-              <TotalDisposal start_timestamp={start_timestamp} end_timestamp={end_timestamp}/>
+              <TotalDisposal
+                start_timestamp={start_timestamp}
+                end_timestamp={end_timestamp}
+              />
             </View>
           ) : (
             <></>
@@ -167,7 +185,10 @@ class GeneratePDF extends React.Component {
               <View style={styles.optionrow}>
                 <Text style={styles.optiontitle}>Divergence Rate</Text>
               </View>
-              <DivergenceRate start_timestamp={start_timestamp} end_timestamp={end_timestamp}/>
+              <DivergenceRate
+                start_timestamp={start_timestamp}
+                end_timestamp={end_timestamp}
+              />
             </View>
           ) : (
             <></>

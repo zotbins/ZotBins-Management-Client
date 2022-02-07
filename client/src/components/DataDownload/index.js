@@ -4,74 +4,81 @@ import PDFMenu from './PDFMenu'
 import CSVMenu from './CSVMenu'
 import GeneratePDF from './PDFGenerator'
 
-function getDate (){
-    var today = new Date();
-    var day = today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
-    return day;
-};
+function getDate() {
+  var today = new Date()
+  var day =
+    today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear()
+  return day
+}
 
-function getTime(){
-    var today = new Date();
-    var hours = today.getHours() % 12;
-    var minutes = today.getMinutes();
-    var time = (hours ? hours : 12) + ':' + (minutes < 10 ? '0' + minutes : minutes) + (today.getHours() >= 12 ? ' PM' : ' AM');
-    return time;
-};
+function getTime() {
+  var today = new Date()
+  var hours = today.getHours() % 12
+  var minutes = today.getMinutes()
+  var time =
+    (hours ? hours : 12) +
+    ':' +
+    (minutes < 10 ? '0' + minutes : minutes) +
+    (today.getHours() >= 12 ? ' PM' : ' AM')
+  return time
+}
 
 class DataDownload extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-        pdfVisible: false,
-        pdfHistoricalCheckedVals: [],
-        pdfName: 'Peter Anteater',
-        pdfTempName: 'Peter Anteater',
-        avgDisposalCombined: false,
-        avgDisposalType: false,
-        disposalPercent: false,
-        disposalTotal: false,
-        divergenceRate: false,
-        tempavgDisposalCombined: false,
-        tempavgDisposalType: false,
-        tempdisposalPercent: false,
-        tempdisposalTotal: false,
-        tempdivergenceRate: false,
-        currentTime: getTime(),
-        currentDate: getDate(),
-        pdfTime: [
-            new Date(Date.now() - 3600000 - 28800000).toISOString(),
-            new Date(Date.now() - 28800000).toISOString(),
-        ],
-        temppdfTime: [
-            new Date(Date.now() - 3600000 - 28800000).toISOString(),
-            new Date(Date.now() - 28800000).toISOString(),
-        ],
-        csvVisible: false,
-        csvTime: [
-            new Date(Date.now() - 3600000 - 28800000).toISOString(),
-            new Date(Date.now() - 28800000).toISOString(),
-        ],
-        csvBinID: 'ZBin7',
+      pdfVisible: false,
+      pdfHistoricalCheckedVals: [],
+      pdfName: 'Peter Anteater',
+      pdfTempName: 'Peter Anteater',
+      avgDisposalCombined: false,
+      avgDisposalType: false,
+      disposalPercent: false,
+      disposalTotal: false,
+      divergenceRate: false,
+      tempavgDisposalCombined: false,
+      tempavgDisposalType: false,
+      tempdisposalPercent: false,
+      tempdisposalTotal: false,
+      tempdivergenceRate: false,
+      currentTime: getTime(),
+      currentDate: getDate(),
+      pdfTime: [
+        new Date(Date.now() - 3600000 - 28800000).toISOString(),
+        new Date(Date.now() - 28800000).toISOString(),
+      ],
+      temppdfTime: [
+        new Date(Date.now() - 3600000 - 28800000).toISOString(),
+        new Date(Date.now() - 28800000).toISOString(),
+      ],
+      csvVisible: false,
+      csvTime: [
+        new Date(Date.now() - 3600000 - 28800000).toISOString(),
+        new Date(Date.now() - 28800000).toISOString(),
+      ],
+      csvBinID: 'ZBin7',
     }
 
     this.handleMenuClick = this.handleMenuClick.bind(this)
     this.menu = (
-        <Menu>
-            <Menu.Item key="1" onClick={this.handleMenuClick}>
-                <Icon type="file-excel" />
-            < span> CSV</span>
-            </Menu.Item>
-            <Menu.Item key="2" onClick={this.handleMenuClick}>
-                <Icon type="file-pdf" />
-                <span> PDF</span>
-            </Menu.Item>
-        </Menu>
+      <Menu>
+        <Menu.Item key="1" onClick={this.handleMenuClick}>
+          <Icon type="file-excel" />
+          <span> CSV</span>
+        </Menu.Item>
+        <Menu.Item key="2" onClick={this.handleMenuClick}>
+          <Icon type="file-pdf" />
+          <span> PDF</span>
+        </Menu.Item>
+      </Menu>
     )
 
     this.handlePDFCancel = this.handlePDFCancel.bind(this)
     this.handlePDFOk = this.handlePDFOk.bind(this)
-    this.handlePDFHistoricalSelections = this.handlePDFHistoricalSelections.bind(this)
+    this.handlePDFHistoricalSelections = this.handlePDFHistoricalSelections.bind(
+      this
+    )
     this.handlePDFTimeChanges = this.handlePDFTimeChanges.bind(this)
     this.updatePDFTimeChanges = this.updatePDFTimeChanges.bind(this)
     this.handlePDFNameChanges = this.handlePDFNameChanges.bind(this)
@@ -117,60 +124,60 @@ class DataDownload extends React.Component {
 
   updateCurrentTime() {
     this.setState({
-        currentDate: getDate(),
-        currentTime: getTime()
-    });
+      currentDate: getDate(),
+      currentTime: getTime(),
+    })
   }
 
   handlePDFOk() {
     this.setState({
-        avgDisposalCombined: this.state.tempavgDisposalCombined,
-        avgDisposalType: this.state.tempavgDisposalType,
-        disposalPercent: this.state.tempdisposalPercent,
-        disposalTotal: this.state.tempdisposalTotal,
-        divergenceRate: this.state.tempdivergenceRate,
-      });
-    this.updatePDFNameChanges();
-    this.updatePDFTimeChanges();
-    this.updateCurrentTime();
+      avgDisposalCombined: this.state.tempavgDisposalCombined,
+      avgDisposalType: this.state.tempavgDisposalType,
+      disposalPercent: this.state.tempdisposalPercent,
+      disposalTotal: this.state.tempdisposalTotal,
+      divergenceRate: this.state.tempdivergenceRate,
+    })
+    this.updatePDFNameChanges()
+    this.updatePDFTimeChanges()
+    this.updateCurrentTime()
   }
 
   handlePDFCancel() {
     this.setState({
-        pdfVisible: false,
-        pdfHistoricalCheckedVals: [],
-        pdfName: 'Peter Anteater',
-        pdfTempName: 'Peter Anteater',
-        avgDisposalCombined: false,
-        avgDisposalType: false,
-        disposalPercent: false,
-        disposalTotal: false,
-        divergenceRate: false,
-        tempavgDisposalCombined: false,
-        tempavgDisposalType: false,
-        tempdisposalPercent: false,
-        tempdisposalTotal: false,
-        tempdivergenceRate: false,
-        currentTime: getTime(),
-        currentDate: getDate(),
-        pdfTime: [
-            new Date(Date.now() - 3600000 - 28800000).toISOString(),
-            new Date(Date.now() - 28800000).toISOString(),
-        ],
-        temppdfTime: [
-            new Date(Date.now() - 3600000 - 28800000).toISOString(),
-            new Date(Date.now() - 28800000).toISOString(),
-        ],
+      pdfVisible: false,
+      pdfHistoricalCheckedVals: [],
+      pdfName: 'Peter Anteater',
+      pdfTempName: 'Peter Anteater',
+      avgDisposalCombined: false,
+      avgDisposalType: false,
+      disposalPercent: false,
+      disposalTotal: false,
+      divergenceRate: false,
+      tempavgDisposalCombined: false,
+      tempavgDisposalType: false,
+      tempdisposalPercent: false,
+      tempdisposalTotal: false,
+      tempdivergenceRate: false,
+      currentTime: getTime(),
+      currentDate: getDate(),
+      pdfTime: [
+        new Date(Date.now() - 3600000 - 28800000).toISOString(),
+        new Date(Date.now() - 28800000).toISOString(),
+      ],
+      temppdfTime: [
+        new Date(Date.now() - 3600000 - 28800000).toISOString(),
+        new Date(Date.now() - 28800000).toISOString(),
+      ],
     })
   }
 
   resetValues() {
     this.setState({
-        tempavgDisposalCombined: false,
-        tempavgDisposalType: false,
-        tempdisposalPercent: false,
-        tempdisposalTotal: false,
-        tempdivergenceRate: false,
+      tempavgDisposalCombined: false,
+      tempavgDisposalType: false,
+      tempdisposalPercent: false,
+      tempdisposalTotal: false,
+      tempdivergenceRate: false,
     })
   }
 
@@ -204,27 +211,27 @@ class DataDownload extends React.Component {
 
   handlePDFTimeChanges(i) {
     this.setState({
-        temppdfTime: i,
+      temppdfTime: i,
     })
     console.log('chosen PDF time frame = ', i)
   }
 
-  updatePDFTimeChanges(){
+  updatePDFTimeChanges() {
     this.setState({
-        pdfTime: this.state.temppdfTime,
+      pdfTime: this.state.temppdfTime,
     })
   }
 
   handlePDFNameChanges(i) {
     this.setState({
-        pdfTempName: i.target.value,
+      pdfTempName: i.target.value,
     })
     console.log('chosen PDF Name = ', i.target.value)
   }
 
   updatePDFNameChanges() {
     this.setState({
-        pdfName: this.state.pdfTempName,
+      pdfName: this.state.pdfTempName,
     })
   }
 

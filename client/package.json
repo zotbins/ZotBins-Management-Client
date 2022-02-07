@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@antv/g2plot": "^0.11.35",
     "@react-pdf/renderer": "^1.6.13",
     "antd": "^3.26.20",
