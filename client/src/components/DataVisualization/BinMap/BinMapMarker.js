@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, Typography, Badge, Icon } from 'antd'
 import { Map, ZoomControl, Overlay } from 'pigeon-maps'
-import zotbinsImage from '../../../images/ZotBins_Icon.png'
+// import zotbinsImage from '../../../images/ZotBins_Icon.png'
+import zotbinsImage from '../../../images/new_zbox_marker.png'
+
 // import zotbinsImage from '../../../images/z_box_marker_one_color.png'
 // import zotbinsImage from '../../../images/green_z_marker.png'
 

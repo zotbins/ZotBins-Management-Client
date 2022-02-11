@@ -69,6 +69,7 @@ class BinMap extends React.Component {
               Close{' '}
             </Button>
           }
+          zIndex={51}
         >
           <Tabs defaultActiveKey="1" animated={false}>
             {this.state.binIds.map((id) => {
@@ -93,6 +94,7 @@ class BinMap extends React.Component {
           onCancel={this.closeMap}
           style={{ top: 0 }}
           footer={null}
+          zIndex={50}
           // <Button type="primary" onClick={this.closeMap}>
           //   Close{' '}
           // </Button>
