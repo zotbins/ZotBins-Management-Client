@@ -3,6 +3,8 @@ import React from 'react'
 import { Input, Avatar, Divider, Icon } from 'antd'
 import zotbins from '../../images/ZotBins_Icon.png'
 
+import NotificationMenuButton from '../Notifications/NotificationMenuButton'
+
 class TopBar extends React.Component {
   constructor(props) {
     super(props)
@@ -66,7 +68,8 @@ class TopBar extends React.Component {
               id="topbar-div__info-container--question"
               type="question-circle"
             />
-            <Icon id="topbar-div__info-container--bell" type="bell" />
+            {/* <Icon id="topbar-div__info-container--bell" type="bell" /> */}
+            <NotificationMenuButton />
             <Divider id="topbar-div__info-container--divider" type="vertical" />
             <h3>Peter Anteater</h3>
             <Icon id="topbar-div__info-container--caret" type="caret-down" />
