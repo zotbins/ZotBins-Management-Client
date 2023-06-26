@@ -112,6 +112,17 @@ h3 {
   flex-direction: column;
   margin: 0px 3rem; }
 
+#bin-registration-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 3rem;
+  padding: 16px; }
+
+#bin-registration-header {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 3rem; }
+
 #doughnut-card {
   margin: 1rem; }
 
