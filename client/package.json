@@ -8,7 +8,6 @@
     "antd": "^3.26.20",
     "chart.js": "^2.9.4",
     "moment": "^2.29.1",
-    "node-sass": "^4.14.1",
     "pigeon-maps": "^0.14.0",
     "quickchart-js": "^1.0.6",
     "react": "^16.14.0",
